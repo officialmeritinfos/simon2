@@ -1,14 +1,30 @@
 @extends('user.base')
 @section('content')
+@inject('injected','App\Defaults\Custom')
+
+
+    @foreach($promos as $promo)
+        <div class="ui-kit-card mb-24">
+            <h3>{{$promo->title}}</h3>
+            <div class="alert alert-primary" role="alert">
+                <h4 class="alert-heading">{{$promo->title}}</h4>
+                {!! $promo->content !!}
+                <div class="mt-3">
+                    <a href="{{route('user.enrollPromo',['id'=>$promo->id])}}" class="btn btn-primary">Enroll</a>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
     <div class="today-card-area pt-24">
         <div class="container-fluid">
+            @include('templates.notification')
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single-today-card d-flex align-items-center">
                         <div class="flex-grow-1">
-                            <span class="today">Today's Eaarning</span>
-                            <h6>$63,000 </h6>
+                            <span class="today">Today's Earning</span>
+                            <h6>${{number_format($injected->userDailyEarning($user->id),2)}}</h6>
                         </div>
 
                         <div class="flex-shrink-0 align-self-center">
@@ -67,9 +83,8 @@
                         <div class="sales-overview d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <h6 class="overview-content">
-                                    Investment Overview
+                                    Earning Overview
                                     <i class="ri-arrow-up-line"></i>
-                                    <span class="more">4% More in 2021</span>
                                 </h6>
                             </div>
 
@@ -77,11 +92,11 @@
                                 <ul>
                                     <li>
                                         <span>This Month</span>
-                                        <h6 class="this-month">$86,589</h6>
+                                        <h6 class="this-month">${{number_format($injected->userCurrentMonthEarning($user->id),2)}}</h6>
                                     </li>
                                     <li>
                                         <span>Last Month</span>
-                                        <h6>$86,589</h6>
+                                        <h6>${{number_format($injected->userPreviousMonthEarning($user->id),2)}}</h6>
                                     </li>
                                 </ul>
                             </div>
@@ -97,7 +112,7 @@
 
                         <div class="active-user-content-wrap">
                             <h6 class="active-user-content">
-                                Profit Overview
+                                Investment Overview
                                 <i class="ri-arrow-up-line"></i>
                             </h6>
 
@@ -129,6 +144,16 @@
                                         <p>
                                             <img src="{{asset('dashboard/user/images/icon/discount-2.png')}}" alt="Images">
                                             Pending Deposits
+                                            <span>{{number_format($pendingDeposit->count(),2)}}</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-sm-6 col-md-3">
+                                    <div class="active-single-item">
+                                        <p>
+                                            <img src="{{asset('dashboard/user/images/icon/discount-2.png')}}" alt="Images">
+                                            Pending Withdrawals
                                             <span>{{number_format($pendingWithdrawal->count(),2)}}</span>
                                         </p>
                                     </div>
@@ -223,4 +248,152 @@
     </div>
     <br><br>
 
+    @push('js')
+        <script>
+            // Assuming you have a route named 'earnings.chart' that returns JSON data
+            const earningsUrl = "{{ route('earnings.chart', ['userId' => $user->id]) }}";
+            const withdrawalsUrl = "{{ route('withdrawals.chart', ['userId' => $user->id]) }}";
+
+            // Fetch earnings data using AJAX
+            Promise.all([fetch(earningsUrl), fetch(withdrawalsUrl)])
+                .then(responses => Promise.all(responses.map(response => response.json())))
+                .then(data => {
+                    const earningsData = data[0];
+                    const withdrawalsData = data[1];
+                    // Create ApexCharts instance
+                    const chart = new ApexCharts(document.querySelector("#ana_dash_1"), {
+                        chart: {
+                            height: 395,
+                            type: "area",
+                            stacked: !0,
+                            toolbar: {
+                                show: !1,
+                                autoSelected: "zoom"
+                            }
+                        },
+                        colors: [
+                            "#7f26c6",
+                            "#7f26c6"
+                        ],
+                        dataLabels: {
+                            enabled: !1
+                        },
+                        stroke: {
+                            curve: "smooth",
+                            width: [1.5, 1.5],
+                            dashArray: [0, 4],
+                            lineCap: "round"
+                        },
+                        grid: {
+                            padding: {
+                                left: 0,
+                                right: 0
+                            },
+                            strokeDashArray: 3
+                        },
+                        markers: {
+                            size: 0,
+                            hover: {
+                                size: 0
+                            }
+                        },
+                        series: [
+                            {
+                                name: "Earnings",
+                                data: earningsData,
+                            },
+                            {
+                                name: "Withdrawals",
+                                data: withdrawalsData,
+                            },
+                        ],
+                        xaxis: {
+                            type: "datetime",
+                            axisTicks: {
+                                show: !0
+                            }
+                        },
+                        fill: {
+                            type: "gradient",
+                            gradient: {
+                                shadeIntensity: 1,
+                                opacityFrom: 0,
+                                opacityTo: 0,
+                                stops: [0, 90, 100]
+                            }
+                        },
+                        tooltip: {
+                            x: {
+                                format: "dd/MM/yy HH:mm"
+                            }
+                        },
+                        legend: {
+                            position: "bottom",
+                            horizontalAlign: "right",
+                            show: false
+                        },
+                    });
+
+                    // Render the chart
+                    chart.render();
+                });
+
+        </script>
+
+        <script>
+            // Assuming you have a route named 'earnings.chart' that returns JSON data
+            const investmentUrl = "{{ route('investments.chart', ['userId' => $user->id]) }}";
+
+            // Fetch earnings data using AJAX
+            Promise.all([fetch(investmentUrl)])
+                .then(responses => Promise.all(responses.map(response => response.json())))
+                .then(data => {
+                    const earningsData = data[0];
+                    // Create ApexCharts instance
+                    const chart = new ApexCharts(document.querySelector("#stacked-column-chart-2"), {
+                        chart: {
+                            height: 385,
+                            type: "bar",
+                            stacked: !0,
+                            toolbar: {
+                                show: !1
+                            },
+                            zoom: {
+                                enabled: !0
+                            }
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: !1,
+                                columnWidth: "15%",
+                                endingShape: "rounded"
+                            }
+                        },
+                        dataLabels: {
+                            enabled: !1
+                        },
+                        series: [
+                            {
+                                name: "Investments",
+                                data: earningsData,
+                            },
+                        ],
+                        xaxis: {
+                            type: "datetime",
+                            axisTicks: {
+                                show: !0
+                            }
+                        },
+                        colors: ["#ff9f43"],
+                        legend: { position: "top"},
+                        fill: { opacity: 1 },
+                    });
+
+                    // Render the chart
+                    chart.render();
+                });
+
+        </script>
+
+    @endpush
 @endsection

@@ -1,8 +1,10 @@
 <?php
 namespace App\Defaults;
 
+use App\Models\InvestmentReturn;
 use App\Models\ReturnType;
 use App\Models\User;
+use Carbon\Carbon;
 
 class Custom{
 
@@ -21,5 +23,38 @@ class Custom{
     {
         $type = ReturnType::where('id',$id)->first();
         return $type->name;
+    }
+    //get user's earning in a day
+    public function userDailyEarning($user)
+    {
+        // Get the current date and create Carbon instances for the start and end of the day
+        $today = Carbon::now();
+        $startOfDay = $today->copy()->startOfDay();
+        $endOfDay = $today->copy()->endOfDay();
+
+        return InvestmentReturn::where('user',$user)->whereBetween('created_at', [$startOfDay, $endOfDay])
+            ->sum('amount');
+    }
+    //get user's earning in previous month
+    public function userPreviousMonthEarning($user)
+    {
+        // Get the current date and create Carbon instances for the start and end of the previous month
+        $today = Carbon::now();
+        $startOfPreviousMonth = $today->copy()->startOfMonth()->subMonth();
+        $endOfPreviousMonth = $today->copy()->endOfMonth()->subMonth();
+
+        return InvestmentReturn::where('user',$user)->whereBetween('created_at', [$startOfPreviousMonth, $endOfPreviousMonth])
+            ->sum('amount');
+    }
+    //get user's earning in current month
+    public function userCurrentMonthEarning($user)
+    {
+        // Get the current date and create Carbon instances for the start and end of the current month
+        $today = Carbon::now();
+        $startOfMonth = $today->copy()->startOfMonth();
+        $endOfMonth = $today->copy()->endOfMonth();
+
+        return InvestmentReturn::where('user',$user)->whereBetween('created_at', [$startOfMonth, $endOfMonth])
+            ->sum('amount');
     }
 }

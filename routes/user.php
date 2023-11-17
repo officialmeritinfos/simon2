@@ -7,6 +7,7 @@ use App\Http\Controllers\User\Investments;
 use App\Http\Controllers\User\Referrals;
 use App\Http\Controllers\User\Settings;
 use App\Http\Controllers\User\Withdrawals;
+use App\Models\Withdrawal;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('dashboard',[Dashboard::class,'landingPage'])->name('user.dashboard');
+Route::get('dashboard/promo/{id}/enroll',[Dashboard::class,'enrollInPromo'])->name('user.enrollPromo');
 
 /*================ DEPOSIT ROUTE ====================*/
 Route::get('deposits',[Deposits::class,'landingPage'])->name('deposit.index');
@@ -50,5 +52,48 @@ Route::post('update-password',[Settings::class,'processPassword'])->name('passwo
 Route::post('update-photo',[Settings::class,'processPhoto'])->name('photo.update');
 /*================ REFERRAL ROUTE ====================*/
 Route::get('referral',[Referrals::class,'landingPage'])->name('referral.index');
+/*================ CHART ROUTE ====================*/
+
+Route::get('/earnings/chart/{userId}', function ($userId) {
+    $earnings = \App\Models\InvestmentReturn::where('user', $userId)
+        ->select('created_at', 'amount')
+        ->get();
+
+    $data = $earnings->map(function ($earning) {
+        return [
+            strtotime($earning->created_at) * 1000, // Convert to milliseconds for ApexCharts
+            $earning->amount,
+        ];
+    });
+    return response()->json($data);
+})->name('earnings.chart');
+
+Route::get('/withdrawal/chart/{userId}', function ($userId) {
+    $earnings = Withdrawal::where('user', $userId)->where('status','!=',3)
+        ->select('created_at', 'amount')
+        ->get();
+
+    $data = $earnings->map(function ($earning) {
+        return [
+            strtotime($earning->created_at) * 1000, // Convert to milliseconds for ApexCharts
+            $earning->amount,
+        ];
+    });
+    return response()->json($data);
+})->name('withdrawals.chart');
+
+Route::get('/investments/chart/{userId}', function ($userId) {
+    $earnings = \App\Models\Investment::where('user', $userId)->where('status','!=',3)->where('status','!=',2)
+        ->select('created_at', 'amount')
+        ->get();
+
+    $data = $earnings->map(function ($earning) {
+        return [
+            strtotime($earning->created_at) * 1000, // Convert to milliseconds for ApexCharts
+            $earning->amount,
+        ];
+    });
+    return response()->json($data);
+})->name('investments.chart');
 
 Route::get('logout',[Login::class,'logout']);

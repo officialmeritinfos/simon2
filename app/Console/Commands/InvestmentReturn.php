@@ -64,7 +64,8 @@ class InvestmentReturn extends Command
 
                     $dataReturns = [
                         'amount'=>$profitToAdd,
-                        'investment'=>$investment->id
+                        'investment'=>$investment->id,
+                        'user'=>$investment->user
                     ];
 
                     $instantCurrentReturn = $currentReturn+1;

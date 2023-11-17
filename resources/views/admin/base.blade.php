@@ -22,6 +22,8 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('dashboard/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{asset('dashboard/vendors/summernote/summernote-bs5.css')}}">
+
 </head>
 
 <body id="page-top">
@@ -73,16 +75,27 @@
                     <a class="collapse-item" href="{{url('admin/investments')}}">Investments</a>
                     <a class="collapse-item" href="{{url('admin/packages')}}">Investment Package</a>
                     <a class="collapse-item" href="{{url('admin/investors')}}">Investors</a>
+                    <a class="collapse-item" href="{{url('admin/withdrawals')}}">Withdrawals</a>
                 </div>
             </div>
         </li>
 
-
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/withdrawals')}}">
-                <i class="fas fa-fw fa-forward"></i>
-                <span>Withdrawals</span></a>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOperations"
+               aria-expanded="true" aria-controls="collapseOperations">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Operations</span>
+            </a>
+            <div id="collapseOperations" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Operations</h6>
+                    <a class="collapse-item" href="{{url('admin/coins')}}">Wallet</a>
+                    <a class="collapse-item" href="{{url('admin/settings')}}">Settings</a>
+                    <a class="collapse-item" href="{{route('admin.promo.index')}}">Promos</a>
+                </div>
+            </div>
         </li>
 
 
@@ -93,28 +106,6 @@
         <div class="sidebar-heading">
             Addons
         </div>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/coins')}}">
-                <i class="fas fa-fw fa-file-contract"></i>
-                <span>Coins</span></a>
-        </li>
-
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('admin/settings')}}">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Account Settings</span></a>
-        </li>
-
-        <!-- Nav Item - Charts -->
-    {{--        <li class="nav-item">--}}
-    {{--            <a class="nav-link" href="{{url('admin/general_settings')}}">--}}
-    {{--                <i class="fas fa-fw fa-cogs"></i>--}}
-    {{--                <span>Website Settings</span></a>--}}
-    {{--        </li>--}}
 
 
     @if($user->is_admin ==1)
@@ -283,6 +274,14 @@
     new ClipboardJS('.copy');
 </script>
 
+<script src="{{asset('dashboard/vendors/summernote/summernote-bs5.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            height: 150,
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -287,7 +287,7 @@
 <!-- Apexcharts Min JS -->
 <script src="{{asset('dashboard/user/js/apexcharts/apexcharts.min.js')}}"></script>
 <!-- Charts Custom Min JS -->
-<script src="{{asset('dashboard/user/js/charts-custom.js')}}"></script>
+{{--<script src="{{asset('dashboard/user/js/charts-custom.js')}}"></script>--}}
 <!-- Form Validator Min JS -->
 <script src="{{asset('dashboard/user/js/form-validator.min.js')}}"></script>
 <!-- Contact JS -->
@@ -301,5 +301,6 @@
 <script>
     new ClipboardJS('.copy');
 </script>
+@stack('js')
 </body>
 </html>

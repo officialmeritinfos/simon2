@@ -17,22 +17,12 @@
                     <form class="row g-3" method="post" action="{{route('withdraw.new')}}">
                         @csrf
                         @include('templates.notification')
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Name</label>
-                            <input type="text" class="form-control" id="inputEmail4" placeholder="Email"
-                                   value="{{$user->name}}" disabled>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email"
-                                   value="{{$user->email}}" disabled>
-                        </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputAddress2">Amount ($)</label>
                             <input type="number" class="form-control" id="inputAddress2"
                                    placeholder="Enter Amount to Withdraw" name="amount">
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputAddress2">Asset</label>
                             <select type="number" class="form-control" id="inputAddress2"
                                     name="asset">
@@ -42,12 +32,12 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-md-6 mx-auto">
+                        <div class="form-group col-md-12 mx-auto">
                             <label for="inputAddress2">Wallet Address</label>
                             <input type="text" class="form-control" id="inputAddress2"
                                    placeholder="Enter Address" name="wallet">
                         </div>
-                        <div class="form-group col-md-6 mx-auto">
+                        <div class="form-group col-md-12 mx-auto">
                             <label for="inputAddress2">Account</label>
                             <select type="number" class="form-control" id="inputAddress2"
                                     name="account">
