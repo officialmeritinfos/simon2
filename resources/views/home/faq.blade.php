@@ -1,37 +1,33 @@
 @extends('home.base')
 
 @section('content')
-    <!-- START SECTION BANNER -->
-    <section class="hero-section ptb-100 gradient-overlay"
-             style="background: url('{{asset('home/img/header-bg-5.jpg')}}')no-repeat center center / cover">
-        <div class="container">
+    <!-- Hero area starts-->
+    <section class="hero-area ">
+        <div class="hero-banner">
+            <div class="inner-hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="hero-text">
+                                <h2>{{$pageName}}</h2>
+                                <span><a href="{{url('/')}}" class="home">Home</a> | <a href="#" class="disabled">{{$pageName}}</a></span>
+                            </div>
 
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-7">
-                    <div class="page-header-content text-white text-center pt-sm-5 pt-md-5 pt-lg-0">
-                        <h1 class="text-white mb-0">{{$pageName}}</h1>
-                        <div class="custom-breadcrumb">
-                            <ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
-                                <li class="list-inline-item breadcrumb-item active">{{$siteName}}</li>
-                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+    <!-- Hero area ends -->
 
     <!-- END SECTION TEAM -->
-    <section class="promo-section ptb-100">
+    <section class="promo-section ptb-100" style="margin-top: 3rem;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-md-9">
-                    <div class="section-heading mb-5">
+                <div class="col-lg-12">
+                    <div class="section-heading mb-5 text-center">
                         <h2>Frequently Asked Questions</h2>
-                        <p class="lead">
-                            Have Any Question?
-                        </p>
                     </div>
                 </div>
             </div>

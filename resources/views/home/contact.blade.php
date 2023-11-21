@@ -2,26 +2,25 @@
 
 @section('content')
 
-    <!-- START SECTION BANNER -->
-    <section class="hero-section ptb-100 gradient-overlay"
-             style="background: url('{{asset('home/img/header-bg-5.jpg')}}')no-repeat center center / cover">
-        <div class="container">
+    <!-- Hero area starts-->
+    <section class="hero-area ">
+        <div class="hero-banner">
+            <div class="inner-hero">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="hero-text">
+                                <h2>{{$pageName}}</h2>
+                                <span><a href="{{url('/')}}" class="home">Home</a> | <a href="#" class="disabled">{{$pageName}}</a></span>
+                            </div>
 
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-7">
-                    <div class="page-header-content text-white text-center pt-sm-5 pt-md-5 pt-lg-0">
-                        <h1 class="text-white mb-0">{{$pageName}}</h1>
-                        <div class="custom-breadcrumb">
-                            <ol class="breadcrumb d-inline-block bg-transparent list-inline py-0">
-                                <li class="list-inline-item breadcrumb-item active">{{$siteName}}</li>
-                            </ol>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+    <!-- Hero area ends -->
 
     <section class="contact-us-section py-5">
         <div class="container contact">
@@ -32,7 +31,7 @@
                 <div class="col-md-6">
                     <div class="contact-us-form gray-light-bg rounded p-5">
                         <h4>Ready to get started?</h4>
-                        <form method="post" action="contact.php" class="contact-us-form">
+                        <form method="get" action="#" class="contact-us-form">
                             <div class="form-row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -76,7 +75,9 @@
                         <address>
                             {{$web->address}}                       </address>
                         <br>
-                        <span>Phone: {{$web->phone}}</span> <br>
+                        @if(!empty($web->phone))
+                            <span>Phone: {{$web->phone}}</span> <br>
+                        @endif
                         <span>Email: <a href="mailto:{{$web->email}}" class="link-color">{{$web->email}}</a></span>
 
                     </div>

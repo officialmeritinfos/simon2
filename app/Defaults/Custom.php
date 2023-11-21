@@ -3,6 +3,7 @@ namespace App\Defaults;
 
 use App\Models\InvestmentReturn;
 use App\Models\ReturnType;
+use App\Models\Service;
 use App\Models\User;
 use Carbon\Carbon;
 
@@ -56,5 +57,10 @@ class Custom{
 
         return InvestmentReturn::where('user',$user)->whereBetween('created_at', [$startOfMonth, $endOfMonth])
             ->sum('amount');
+    }
+    //services
+    public function getServices()
+    {
+        return Service::where('status',1)->get();
     }
 }

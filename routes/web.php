@@ -21,11 +21,15 @@ Route::get('/',[HomeController::class,'index']);
 Route::get('index',[HomeController::class,'index']);
 Route::get('about',[HomeController::class,'about']);
 Route::get('plans',[HomeController::class,'plans']);
+Route::get('plan',[HomeController::class,'plans']);
 Route::get('terms',[HomeController::class,'terms']);
 Route::get('terms',[HomeController::class,'terms']);
 Route::get('services',[HomeController::class,'services']);
+Route::get('service/{id}/details',[HomeController::class,'serviceDetail'])
+    ->name('service.details');
 Route::get('faqs',[HomeController::class,'faqs']);
 Route::get('faq',[HomeController::class,'faqs']);
+Route::get('security',[HomeController::class,'security']);
 Route::get('estate',[HomeController::class,'estate']);
 Route::get('contact',[HomeController::class,'contact']);
 Route::get('loan',[HomeController::class,'loan']);

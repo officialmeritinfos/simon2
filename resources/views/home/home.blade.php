@@ -1,1109 +1,665 @@
 @extends('home.base')
 @section('content')
+    @push('css')
+        <style>
+            .single-price {
+                text-align: center;
+                background: #262626;
+                transition: .7s;
+                margin-top: 20px;
+            }
+            .single-price h3 {
+                font-size: 25px;
+                color: #000;
+                font-weight: 600;
+                text-align: center;
+                margin: 0;
+                margin-top: -80px;
+                font-family: poppins;
+                color: #fff;
+            }
+            .single-price h4 {
+                font-size: 48px;
+                font-weight: 500;
+                color: #fff;
+            }
+            .single-price h4 span.sup {
+                vertical-align: text-top;
+                font-size: 25px;
+            }
+            .deal-top {
+                position: relative;
+                background: #1F51FF;
+                font-size: 12px;
+                padding: 136px 24px 0;
+            }
+            .deal-top::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -50px;
+                width: 0;
+                height: 0;
+                border-top: 50px solid #1F51FF;
+                border-left: 175px solid transparent;
+                border-right: 183px solid transparent;
+            }
+            .deal-bottom {
+                padding: 56px 16px 0;
+            }
+            .deal-bottom ul {
+                margin: 0;
+                padding: 0;
+            }
+            .deal-bottom  ul li {
+                font-size: 16px;
+                color: #fff;
+                font-weight: 300;
+                margin-top: 16px;
+                border-top: 1px solid #E4E4E4;
+                padding-top: 16px;
+                list-style: none;
+            }
+            .btn-area a {
+                display: inline-block;
+                font-size: 18px;
+                color: #fff;
+                background: #1F51FF;
+                padding: 8px 64px;
+                margin-top: 32px;
+                border-radius: 4px;
+                margin-bottom: 40px;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-decoration: none;
+            }
 
-    <section class="hero-equal-height pt-165 pb-100 gradient-overly-right-color"
-             style="background: url('{{asset('home/img/7.jpg')}}')no-repeat center center / cover">
-        <div class="container">
-            <div class='row'>
 
-
-            </div>
-            <div class="row">
-                <div class="owl-carousel owl-theme hero-content-slider custom-dot custom-dot-2">
-                    <div class="item">
-                        <div class="col-md-8 col-lg-7 col-12">
-                            <div class="hero-content-wrap text-white">
-                                <h1 class="text-white">Best Real Estate And Project Management Company</p>
-                                    <p class="lead">We offer the best rates developed by the financial department of our company and present you reasonable interest rates that our company will be guaranteed to pay investors</p>
-                                    <div class="action-btns mt-4">
-                                        <a href="{{route('register')}}" class="btn secondary-solid-btn mr-3">Sign Up</a>
-                                        <a href="{{route('login')}}" class="btn outline-white-btn">Login</a>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-8 col-lg-7 col-12">
-                            <div class="hero-content-wrap text-white">
-                                <span class="text-uppercase">
-                                    <span style="color: #fff;">
-                                        <b style="color: #f49917;"> 1 BTC</b> USD 19,808.92
-                                    </span>
-                                </span>
-                                <h1 class="text-white">Confidence To Live Boldly.
-                                    And Retire On Your Terms.</h1>
-                                <p class="lead">We advocate for what is most important to you,
-                                    financial education, meticulous planning
-                                    and clear guidance to a secured financial future.</p>
-                                <div class="action-btns mt-3">
-                                    <a href="about" class="btn btn-block secondary-solid-btn">Know More</a>
+            .single-price:hover {
+                background: #1F51FF;
+            }
+            .single-price:hover .deal-top {
+                background: #262626;
+            }
+            .single-price:hover .deal-top:after {
+                border-top: 50px solid #262626;
+            }
+            .single-price:hover .btn-area a {
+                background: #262626;
+            }
+            .link-area a
+            {
+                text-decoration:none;
+                color:#fff;
+                font-size:25px;
+            }
+        </style>
+    @endpush
+    <!-- Hero area starts-->
+    <section class="hero-area">
+        <div class="hero-slider">
+            <div class="active-slider">
+                <div class="single-slider-one hero-utility">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="hero-text">
+                                    <p> <i class="fas fa-angle-double-right"></i> Consultancy Solutions For your finances</p>
+                                    <h1>
+                                        International Private Equity Company
+                                    </h1>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <section class="promo-section pt-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block p-3 rounded d-flex justify-content-between">
-                        <div class="promo-block-icon mr-4">
-                            <span class="fas fa-brain icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content ">
-                            <h5>STEADY GROWTH</h5>
-                            <p>{{$siteName}} is a safe and secured option, which ensures steady growth on your investments with daily
-                                returns on an ongoing basis with no hustle and instantly</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block p-3 rounded d-flex justify-content-between">
-                        <div class="promo-block-icon mr-4">
-                            <span class="fas fa-bezier-curve icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content">
-                            <h5>RELIABLE SYSTEM</h5>
-                            <p>{{$siteName}} is backed by team of professionals, experts and specialist of trading market providing 24/7
-                                guidance and support to the users ensuring a reliable system.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-4">
-                    <div class="single-promo-block p-3 rounded d-flex justify-content-between">
-                        <div class="promo-block-icon mr-4">
-                            <span class="fas fa-life-ring icon-md color-primary"></span>
-                        </div>
-                        <div class="promo-block-content">
-                            <h5>MAXIMUM EFFICIENCY</h5>
-                            <p>The most advanced intelligent monitoring technology with high level of professionalism of
-                                {{$siteName}} provides safe returns on your investments ensuring maximum efficiency.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about-us-section ptb-100">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-md-12 col-lg-6">
-                    <div class="about-img-wrap">
-                        <img src="{{asset('home/img/blockchain.png')}}" alt="video" class="img-fluid rounded shadow-sm">
-
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-5">
-                    <div class="about-content-right mb-md-4 mb-lg-0">
-                        <h2>About Us</h2>
-                        <p>{{$siteName}} is an automatic online investment platform established by a team of professional traders focusing mainly
-                            on crypto currency trading over multiple exchanges and market. Adding value to the team of like minded
-                            businessmen specialist in Bitcoin mining. Our company has been growing fast by expanding trade industry
-                            and mining techniques and rolling more elite traders and Miners respectively. {{$siteName}} is helping to educate,
-                            provide service for, secure, protect and ultimately profit from this emerging industry.
-                            Anyone all over the world can join {{$siteName}} and began earning passive income by taking advantage of
-                            our expertise in Bitcoin mining and crypto currency trading.
-                        </p>
-                        <div class="action-btns mt-3">
-                            <a href="about" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-12 mt-1">
-                    <div class="about-content-right mb-md-4 mb-lg-0">
-                        <div class="feature-tabs-wrap">
-                            <ul class="nav nav-tabs mb-3 border-bottom-0 feature-tabs" data-tabs="tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center active" href="#feature-tab-2"
-                                       data-toggle="tab">
-                                        <h6 class="mb-0">Our Mission</h6>
+                                <div class="hero-cta d-flex align-items-center">
+                                    <a href="{{route('register')}}" class="button header-cta">
+                                        Start Membership
                                     </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link d-flex align-items-center" href="#feature-tab-3"
-                                       data-toggle="tab">
-                                        <h6 class="mb-0">Our Vision</h6>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="tab-content feature-tab-content">
-                                <div class="tab-pane active" id="feature-tab-2">
-                                    <p>The goal of {{$siteName}} is to provide its users a unique, safe and secured platform for
-                                        their investments in the field of crypto currency. This is why we have used
-                                        cutting-edge platform with extensive infrastructure intended to make things more
-                                        convenient.</p>
+                                    <a href="{{url('about')}}" class="link">About us</a>
 
-                                    <p>Due to this technology, our platform is able to make possible of providing real and steady profits on an ongoing daily basis.</p>
-                                </div>
-                                <div class="tab-pane" id="feature-tab-3">
-                                    <p>At {{$siteName}}, we commit to provide services we render to our clients. This is why we always try to expand our technical
-                                        capabilities and financial turnover with the help
-                                        of ASIC miners having hands-on experience guarantees for gaining profit by generating crypto currencies.
-
-                                        {{$siteName}} envisions to widen the pool of investors by engaging in effective strategic mining and trading of crypto currencies.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="about-us-section ptb-100">
-        <div class="container">
-            <div class="row justify-content-around">
-                <div class="col-md-12 col-lg-6">
-                    <div class="about-img-wrap">
-                        <img src="{{asset('home/img/card.png')}}" alt="video" class="img-fluid rounded shadow-sm">
-
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-5">
-                    <div class="about-content-right mb-md-4 mb-lg-0">
-                        <h2>Our  virtual credit Card</h2>
-                        <p>The partnership aims to fill a gap in the traditional financial system that has left many without access to essential banking products. According to a 2017 survey by the FDIC, 25 percent of U.S. households are unbanked or underbanked, while global numbers have reached a staggering 1.7 billion, according to data released by the World Bank. Through BlockCard, {{$siteName}}  investors can have a virtual card issued to them while a physical card is mailed to them. The card has a minimum of $1000 balance needed. It can be used at over 45 million merchants and ATMs – anywhere in the world where major credit cards are accepted.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="feature-content-two ptb-100 white-bg text-dark">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="section-heading text-center mb-5">
-                        <h2>Why Us?</h2>
-                        <p class="lead">
-                            Here are some of the many features that define our uniqueness.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-headphone-alt icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">24/7 Support</h5>
-                        <p>Our customer care service is available at all time to attend to you and also offer profitable advice on the best investment programs.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-key icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">Secured Transactions</h5>
-                        <p>Your financial future is secured through our multiple investment packages that are suitable for every class.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-lock icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">Quick Returns</h5>
-                        <p>We offer you an unbeatable interest on your investment within the shortest possible time</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-reload icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">Strong Security</h5>
-                        <p>The system runs on highly encrypted algorithms to protect and secure our user accounts. We have experienced security experts who are constantly fixing threats.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-world icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">Our Knowledge</h5>
-                        <p>The team of technicians {{$siteName}} and the company's financial department monitor key cryptocurrency market trends. We are studying the processes of mining and search the system that will optimize costs and reduce net cost of Bitcoin.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-feature-list p-4 text-center">
-                        <span class="ti-thought icon-sm d-block color-secondary mb-3"></span>
-                        <h5 class="mb-2 text-dark">Our Experience</h5>
-                        <p>Our team trades cryptocurrencies since their entry into the wide circulation in 2013, it understands the Bitcoin pricing mechanisms and monitors the main trends at the market. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="our-blog-section pt-2 pb-5">
-        <div class="container">
-            <div class="row">
 
 
+                <div class="single-slider-two hero-utility">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8">
+                                <div class="hero-text">
+                                    <p> <i class="fas fa-angle-double-right"></i> Trading & Investing</p>
+                                    <h1>World-class trading and investing</h1>
+                                </div>
 
-                <div class="col-md-6">
-                    <div class="single-blog-card card border-0 shadow-sm">
-                        <div class="blog-img">
-                            <span class="category position-absolute">Buying a new-build home</span>
-                            <img src="{{asset('home/img/estate/1.jpg')}}"
-                                 class="card-img-top position-relative img-fluid" alt="blog">
+                                <div class="hero-cta d-flex align-items-center">
+                                    <a href="{{route('register')}}" class="button header-cta">
+                                        Start Membership
+                                    </a>
+                                    <a href="{{url('about')}}" class="link">About us</a>
+
+                                </div>
+
+                            </div>
+
                         </div>
-                        <div class="card-body bg-white text-dark" style="height:35rem;">
-                            <h2 class="text-dark">
-                                Our aim is to bring positive growth and change to the world
-                                through our investment offers.
-                            </h2>
-                            <p class="card-text">
-                                {{$siteName}} is top-notch leading Real Estate and Project Management
-                                Organization, offering an Outstanding real estate Services. Its primary
-                                focus is to help individuals and corporate Organizations to become landowners
-                                and homeowners. Our properties have well laid out the plan for the modern
-                                development of the 21st-century estates with modern facilities and
-                                infrastructures that would be well serviced. Our properties have c of o,
-                                gazette, excision, registered survey etc.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero area ends -->
+
+    <!-- About Area Starts -->
+    <section class="about" style="margin-top: -8rem;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <div class="section-title">
+                            <div class="sub-heading">
+                                <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                                <p>What we do</p>
+                            </div>
+                            <h2>We're building the world's most human financial company</h2>
+                        </div>
+
+                        <div class="text-content">
+                            <p>
+                                We started by providing smart, simple investing, without the high fees and account minimums
+                                associated with traditional investment management. We invest your money in a globally
+                                diversified portfolio of low-cost index funds, and our cutting-edge technology helps you
+                                earn the best possible return, while optimizing your tax bill. This means we do things like
+                                automatic rebalancing, dividend reinvesting, and tax loss harvesting — services that were
+                                only available to the ultra rich until now or that most people found too time-consuming
+                                and tedious to do on their own.
+                            </p>
+                            <p>
+                                Our expert financial advisors are always available when you need them. They can help plan
+                                your financial milestones and answer questions you might have about potential risks or
+                                what sort of investment accounts you should have.
                             </p>
 
-                        </div>
+                            <div class="progress-wrapper">
+                                <div class="progress-one">
+                                    <div class="progress-bar" data-percent="75" data-duration="1000"></div>
+                                    <h5>Asset Management</h5>
+                                </div>
 
-                    </div>
-                </div>
+                                <div class="progress-two">
+                                    <div class="progress-bar" data-percent="95" data-duration="1000"></div>
+                                    <h5>Financial Investment</h5>
+                                </div>
+                            </div>
 
-
-                <div class="col-md-6">
-                    <div class="single-blog-card card border-0 shadow-sm">
-                        <div class="blog-img">
-                            <span class="category position-absolute">Ready to move on?</span>
-                            <img src="{{asset('home/img/estate/8.jpg')}}" class="card-img-top position-relative img-fluid" alt="blog">
-                        </div>
-                        <div class="card-body bg-white text-dark" style="height:45.5rem;">
-                            <h2 class="text-dark">We know what a home is really worth</h2>
-                            <p class="card-text">
-                                {{$siteName}}is a Real Estate and Project Management company with
-                                primary commitment in land/property development, real estate
-                                investment and brokerage services. Our interest to offer excellent
-                                services in the real estate industry is second to none as we provide
-                                professional and flexible service to our streams of customers in any country.
+                            <p>
+                                Investing is just one part of your financial picture. So, we've introduced more ways to
+                                reach your goals and manage your money. High interest savings. Commission-free trading.
+                                And features — like automatically investing your spare change — that make it easier to
+                                save for your future. That's because we believe that everyone should have access to the
+                                tools they need to make smart financial choices.
                             </p>
 
+
+                            <a href="{{url('about')}}" class="button header-cta about-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 r-margin-top">
+
+                    <div class="about-img">
+                        <img src="{{asset('home/images/about-image.png')}}" alt="team">
+                        <img src="{{asset('home/images/abt-overlay.png')}}" alt="overlay" class="overlay">
+                    </div>
+
+                    <div class="experience">
+                        <span>15</span>
+                        <p>Years of experience</p>
+                    </div>
+
+                    <div class="quote">
+                        <h5>We’re Committed For Creating financial prudence.</h5>
+                        <div class="quote-info">
+                            <img src="{{asset('home/images/ceo.jpeg')}}" alt="man" class="rounded-circle"
+                            style="width: 100px;">
+
+                            <div class="meta-info">
+                                <p>Joseph C</p>
+                                <span>CEO</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About area ends -->
+
+    <!-- Offer area starts -->
+    <section class="offer" style="margin-top: -8rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <p>OUR PURPOSE</p>
+                        </div>
+                        <h2>Our common Purpose is Creating opportunities to rise.</h2>
+                    </div>
+                </div>
+
+            <div class="col-md-6 row justify-content-center">
+                <div class="col-lg-6 r-mb">
+                    <div class="offer-wrapper">
+                        <iconify-icon icon="fluent-mdl2:design"></iconify-icon>
+                        <h5>Explore With Us</h5>
+                        <p>
+                            Seize the opportunity to grow your capital in the stock market by copying the trades of top
+                            preforming traders in our investment programme
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 r-mb">
+                    <div class="offer-wrapper">
+                        <iconify-icon icon="fluent:archive-settings-24-regular"></iconify-icon>
+                        <h5>Investment Management</h5>
+                        <p>
+                            We deliver active stock investment strategies across public and private markets and custom
+                            solutions to institutional and individual investors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="offer-wrapper">
+                        <iconify-icon icon="carbon:application-web"></iconify-icon>
+                        <h5>High Frequency Trading</h5>
+                        <p>
+                            Global institutions, leading hedge funds and industry innovators turn to Century21 company's
+                            trading advice and market-making services.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 margin-top">
+                    <div class="offer-wrapper">
+                        <iconify-icon icon="ant-design:radar-chart-outlined"></iconify-icon>
+                        <h5>Wealth Management</h5>
+                        <p>
+                            We help people, businesses and institutions build, preserve and manage wealth so they can
+                            pursue their financial goals.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- Offer area ends -->
+
+    <!-- Counter starts -->
+    <section class="counter" style="margin-top: -12rem;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 r-mb">
+                    <div class="counter-img">
+                        <img src="{{asset('home/images/counter-img.png')}}" alt="men">
+                        <img class="overlay" src="{{asset('home/images/counter-overlay.png')}}" alt="overlay">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                            <p>Our achievements</p>
+                        </div>
+                        <h2>Building a sustainable finance for you</h2>
+                    </div>
+
+                    <div class="text-content">
+                        <p>Humans lie, data don't. All independently audited and verified.</p>
+
+                        <div class="counter-wrapper">
+                            <div class="single-counter">
+                                <h2>50k+</h2>
+                                <p>Investors</p>
+                            </div>
+
+                            <div class="single-counter pt-28">
+                                <img src="{{asset('home/images/counter-arrow.png')}}" alt="arrow">
+                                <h2>500M+</h2>
+                                <p>Total funds invested</p>
+                            </div>
+
+                            <div class="single-counter pt-28">
+                                <h2>300M+</h2>
+                                <p>profit funds paid out</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Counter ends -->
+
+    <!-- Choose start -->
+    <section class="choose">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 r-mb">
+                    <div class="choose-content">
+                        <div class="section-title">
+                            <div class="sub-heading">
+                                <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                                <p>Why choose us</p>
+                            </div>
+                            <h2>We Are Different From Others</h2>
+                        </div>
+
+                        <div class="text-content">
+                            <p class="first-child"></p>
+
+                            <div class="list-wrapper">
+                                <div class="list-content">
+                                    <i class="fas fa-check"></i>
+                                    <p>We use the latest technology to protect your information and financial transactions.</p>
+                                </div>
+
+                                <div class="list-content">
+                                    <i class="fas fa-check"></i>
+                                    <p>From strategy to analysis, our tools help you keep track of your finances with ease.</p>
+                                </div>
+
+                                <div class="list-content">
+                                    <i class="fas fa-check"></i>
+                                    <p>We also participate in asset protection programs to further secure your funds.</p>
+                                </div>
+
+                                <div class="list-content">
+                                    <i class="fas fa-check"></i>
+                                    <p>We are providing investors access to investments previously available to the top 1%.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="counter-img">
+                        <img src="{{asset('home/images/choose-img.png')}}" alt="women">
+                        <img class="overlay" src="{{asset('home/images/counter-overlay.png')}}" alt="overlay">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Choose ends -->
+
+    <!-- Portfolio area starts -->
+    <div class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                            <p>Why Choose Us</p>
+                        </div>
+                        <h2>Here are why you should Choose us</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex1.png" alt="">
+                        </div>
+                        <h3>Advanced AI Technology</h3>
+                        <p>
+                            {{$siteName}} harnesses advanced AI technology to analyze vast amounts of data, identify patterns, and make data-driven investment decisions with speed and precision. By leveraging cutting-edge technology, {{$siteName}} provides clients with a competitive edge and the potential for superior investment performance.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex2.png" alt="">
+                        </div>
+                        <h3>Comprehensive Investment Services</h3>
+                        <p>
+                            {{$siteName}} offers a wide range of investment services, including asset management, stock trading,
+                            cryptocurrency investments, and real estate. Clients can benefit from a holistic approach to
+                            investment management, catering to their diverse financial goals and risk preferences.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex3.png" alt="">
+                        </div>
+                        <h3>Proactive Risk Management</h3>
+                        <p>
+                            {{$siteName}} prioritizes risk management to protect clients' investments. The company utilizes sophisticated risk assessment models, AI algorithms, and diversification strategies to identify and mitigate potential risks. By taking a proactive approach to risk management, {{$siteName}} aims to safeguard clients' capital and deliver stable and consistent investment returns.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex4.png" alt="">
+                        </div>
+                        <h3>Expert Team of Professionals</h3>
+                        <p>
+                            {{$siteName}} boasts a team of financial analysts, data scientists, AI specialists, and industry experts. This multidisciplinary team collaborates to provide clients with expert insights, market analysis, and personalized investment advice to optimize their portfolios.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex5.png" alt="">
+                        </div>
+                        <h3>Market Insights and Trend Identification</h3>
+                        <p>
+                            {{$siteName}}'s AI-driven market analysis capabilities enable the identification of lucrative investment opportunities and emerging market trends. By monitoring market trends, economic indicators, and historical data, {{$siteName}} provides valuable insights to clients, empowering them to make informed investment decisions and capitalize on market inefficiencies.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="ex-fea-list mb-60">
+                        <div class="ex-fea-img mb-30">
+                            <img src="https://aitrust24.com/home/img/icon/ex6.png" alt="">
+                        </div>
+                        <h3>Client-Centric Approach</h3>
+                        <p>
+                            {{$siteName}} prioritizes the unique goals and aspirations of its clients. The company takes a client-centric approach, offering personalized investment solutions tailored to individual risk preferences and financial objectives. Regular communication, transparency, and proactive client service are key aspects of the company's approach.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio area ends -->
+
+    <!-- About Area Starts -->
+    <section class="pricing-area" style="margin-top: 3rem; margin-bottom: 5rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="about-content">
+                        <div class="section-title text-center">
+                            <h2>Investment Plans</h2>
                         </div>
 
                     </div>
                 </div>
-
-
-
-
-            </div>
-
-        </div>
-    </section>
-    <section class="pricing-section ptb-100 gray-light-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="section-heading text-center mb-5">
-                        <h2>Investment Plans</h2>
-                        <p class="lead">We understand the needs of our customers very much that our investment plans covers the widest range of benefits.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
                 @foreach($packages as $package)
                     @inject('option','App\Defaults\Custom')
-                    <div class="col-lg-4 col-md mb-4">
-                        <div class="card text-center single-pricing-pack">
-                            <div class="pt-4"><h5>{{$package->name}}</h5>
-                                <span class="badge badge-success">Investment</span></div>
-                            <div class="card-header py-4 border-0 pricing-header">
-                                <div class="h1 text-center mb-0">
-                                    <p class="pricing-rate">{{$package->roi}} <sup>%</sup>
-                                        <span>{{$option->getReturnType($package->returnType)}} for {{$package->Duration}}</span>
-                                    </p>
-
-                                </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12 mx-auto">
+                        <div class="single-price">
+                            <div class="deal-top">
+                                <h3>{{$package->name}}</h3>
+                                <h4> {{$package->roi}} <sup>%</sup>
+                                    <small>{{$option->getReturnType($package->returnType)}}</small>
+                                </h4>
                             </div>
-                            <div class="card-body bg-transparent affix text-white">
-                                <ul class="list-unstyled text-left text-sm mb-4 pricing-feature-list">
-                                    <li>
-                                        <span class="ti-check-box mr-2 color-secondary"></span>
-                                        <span>Min</span><b class="float-right">${{number_format($package->minAmount,2)}}</b>
-                                    </li>
-                                    <li>
-                                        <span class="ti-check-box mr-2 color-secondary"></span>
-                                        <span>Max</span><b class="float-right">
-                                            @if($package->isUnlimited !=1)
-                                                ${{number_format($package->maxAmount,2)}}
-                                            @else
-                                                Unlimited
-                                            @endif
-                                        </b>
-                                    </li>
-                                    <li>
-                                        <span class="ti-check-box mr-2 color-secondary"></span>
-                                        <span>Profit</span><b class="float-right">
-                                            {{$package->numberOfReturns*$package->roi}}%
-                                        </b>
-                                    </li>
-
-                                    <li>
-                                        <span class="ti-check-box mr-2 color-secondary"></span>
-                                        <span>Referral Bonus</span><b class="float-right">{{$package->referral}}%</b>
-                                    </li>
-                                    <li>
-                                        <span class="ti-check-box mr-2 color-secondary"></span>
-                                        <span>Duration</span><b class="float-right">{{$package->Duration}}</b>
-                                    </li>
-                                    <!--<li>-->
-                                    <!--    <span class="ti-check-box mr-2 color-secondary"></span>-->
-                                    <!--    <span>Capital Withdrawal</span>-->
-                                    <!--    <b class="float-right">14 Days</b>-->
-                                    <!--</li>-->
+                            <div class="deal-bottom">
+                                <ul class="deal-item">
+                                    <li><b>Minimum Deposit:</b> ${{number_format($package->minAmount,2)}}</li>
+                                    <li><b>Maximum Deposit:</b> @if($package->isUnlimited !=1)
+                                            ${{number_format($package->maxAmount,2)}}
+                                        @else
+                                            Unlimited
+                                        @endif</li>
+                                    <li><b>Profit:</b> {{$package->numberOfReturns*$package->roi}}%</li>
+                                    <li><b>Referral Bonus:</b> {{$package->referral}}%</li>
+                                    <li><b>Duration:</b> {{$package->Duration}}</li>
                                 </ul>
-                                <a href="{{route('login')}}" class="btn outline-white-btn p-2">Get Started Now</a>
+                                <div class="btn-area">
+                                    <a href="{{route('register')}}">Enroll Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
 
-            </div>
 
-            <div class="row justify-content-center">
-
-
-
-            </div>
-            <div class="action-btns mt-3 text-center">
-                <a href="plans" class="btn btn-success">View All Plans</a>
-            </div>
-
-        </div>
-    </section>
-
-
-
-
-    <!-- Section Features -->
-
-
-    <section class="call-to-action pt-5 pb-5 bg-white">
-        <div class="container bg-white">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-8">
-                    <div class="call-to-action-content text-white text-center mb-4 text-dark">
-                        <h2 class="text-dark mb-1">A Summary of Our Journey</h2>
-                        <p class="lead">We have over the years gannered loads of experiences that has consequently boosted our portfolio in world financial services.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row text-dark">
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-dark">
-                        <span class="ti-user icon-md"></span>
-                        <h3 class="mb-0 text-dark">49869</h3>
-                        <p>Active Users</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-dark">
-                        <span class="ti-time icon-md"></span>
-                        <h3 class="mb-0 text-dark">1330</h3>
-                        <p>Running Days</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-dark">
-                        <span class="ti-cup icon-md"></span>
-                        <h3 class="mb-0 text-dark">371</h3>
-                        <p>Won Award</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="single-counter rounded p-4 text-center text-dark">
-                        <span class="ti-world icon-md"></span>
-                        <h3 class="mb-0 text-dark">182</h3>
-                        <p>Global Presence</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <section class="about-us-section ptb-100">
+    <!-- Appointment area starts -->
+    <div class="appointment">
         <div class="container">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-md-12 col-lg-6 mx-auto border border-primary">
-                    <div class="video-promo-content mb-md-4 mb-lg-0">
-                        <h2>Take advantage of proven solutions to achieve {{$siteName}} success</h2>
-                        <p>Our roots go back to 2013 - right around the beginning of the revolution that would become known
-                            today as Bitcoin. Following the boom of this industry, we quickly began to see some of the common
-                            issues that were present when people tried to become involved. We took this need into account
-                            along with our own personal ambition to develop an integrated platform that was able to both
-                            satisfy the needs of investors and meet their expectations with sufficient returns on their
-                            investments. Since then, we have maintained our focus as a company that looks towards the future
-                            and transforms the opportunities offered to our valued clients.
+            <div class="row align-items-center r-center">
+                <div class="col-lg-6 r-mb">
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <img src="{{asset('home/images/icon-white.png')}}" alt="caret">
+                            <p>Get Started</p>
+                        </div>
+                        <h2>Become a member of the renowned group today!</h2>
+                    </div>
+                </div>
 
-                        </p>
-                        <ul class="list-unstyled tech-feature-list">
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Security</strong>
-                                High Tech
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Corporate</strong>
-                                Blueback Global
-                            </li>
-                            <li class="py-1"><span class="ti-check-box mr-2 color-secondary"></span><strong>Insured</strong> AIICO Insurance American International</li>
-                        </ul>
-                        <!--<div class="row mt-4">
-                            <div class="col-4">
-                                <div class="counter-single">
-                                    <h5 class="mb-0 color-secondary">USD </h5>
-                                    <strong>Deposits</strong>
+                <div class="col-lg-6 d-end">
+                    <div class="button header-cta appointment-cta">
+                        <a href="{{route('register')}}"><span>Make An Appointment <i class="fas fa-arrow-right"></i></span> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment area ends -->
+
+    <!-- Testimonials starts -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 z-id-10">
+                    <div class="row testimonial-slider">
+                        <div class="testimonial-wrapper">
+                            <i class="fas fa-quote-left"></i>
+                            <p>“ {{$siteName}} has been instrumental in helping me achieve my financial goals. Their AI-driven
+                                investment strategies have consistently delivered impressive returns. The team's expertise and personalized
+                                approach make me feel confident in my investment decisions. I highly recommend {{$siteName}} to anyone
+                                looking for a trustworthy investment partner.”</p>
+
+                            <div class="client-info">
+                                <img src="https://ui-avatars.com/api/?name=Adam R &rounded=true" alt="man">
+                                <div class="client-name">
+                                    <h5>Adam R</h5>
+                                    <span>Investor</span>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <div class="counter-single">
-                                    <h5 class="mb-0 color-secondary">USD </h5>
-                                    <strong>Withdrawal</strong>
+                        </div>
+
+                        <div class="testimonial-wrapper">
+                            <i class="fas fa-quote-left"></i>
+                            <p>“ I am thrilled with the results I've achieved through {{$siteName}}. Their advanced AI
+                                technology and market analysis have allowed me to capitalize on emerging trends and
+                                maximize my investment returns. The team's professionalism, regular updates, and transparent
+                                communication have made my investment journey a smooth and profitable experience.”</p>
+
+                            <div class="client-info">
+                                <img src="https://ui-avatars.com/api/?name=Michael P &rounded=true" alt="man">
+                                <div class="client-name">
+                                    <h5>Michael P</h5>
+                                    <span>Investor</span>
                                 </div>
                             </div>
-                        </div>-->
-                        <div class="action-btns mt-4">
-                            <a href="services" class="btn primary-solid-btn mr-2">View Our Services</a>
-                            <a href="contact" class="btn outline-btn">Contact Us</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="work-process-new ptb-100 gray-light-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-9 col-lg-8">
-                    <div class="section-heading text-center mb-5">
-                        <h2>Our Process is Simple and Short</h2>
-                        <p class="lead">Distinctively grow go forward manufactured products and optimal networks. Enthusiastically
-                            disseminate outsourcing through revolutionary.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="work-process-wrap text-center">
-                        <div class="single-work-process">
-                            <div class="work-process-icon-wrap secondary-bg rounded-circle">
-                                <i class="ti-user icon-md text-white"></i>
-                                <span class="process-step primary-bg text-white shadow-sm">1</span>
-                            </div>
-                            <div class="work-process-content mt-4">
-                                <h5>Sign Up</h5>
-                                <p>Click on the registration button to get a new account.</p>
-                            </div>
-                        </div>
-                        <div class="single-work-process">
-                            <div class="work-process-icon-wrap secondary-bg rounded-circle">
-                                <i class="ti-settings icon-md text-white"></i>
-                                <span class="process-step primary-bg text-white shadow-sm">2</span>
-                            </div>
-                            <div class="work-process-content mt-4">
-                                <h5>Set Up Your Wallet</h5>
-                                <p>Login to your account to add new wallet</p>
-                            </div>
-                        </div>
-                        <div class="single-work-process">
-                            <div class="work-process-icon-wrap secondary-bg rounded-circle">
-                                <i class="ti-pencil-alt icon-md text-white"></i>
-                                <span class="process-step primary-bg text-white shadow-sm">3</span>
-                            </div>
-                            <div class="work-process-content mt-4">
-                                <h5>Make Deposit</h5>
-                                <p>Make deposit from any of our plans that is convenient for you. </p>
-                            </div>
-                        </div>
-                        <div class="single-work-process">
-                            <div class="work-process-icon-wrap secondary-bg rounded-circle">
-                                <i class="ti-wallet icon-md text-white"></i>
-                                <span class="process-step primary-bg text-white shadow-sm">4</span>
-                            </div>
-                            <div class="work-process-content mt-4">
-                                <h5>Make Withdrawal</h5>
-                                <p>Withdraw to your wallet at your convenient or reinvest to earn more. </p>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Team -->
-
-    <!-- Section Features -->
-    <section class="our-blog-section pt-2 pb-5 gray-light-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="section-heading mb-5">
-                        <h2>Our Services</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-md-4">
-                    <div class="single-blog-card card border-0 shadow-sm">
-                        <div class="blog-img">
-                            <span class="category position-absolute">Forex</span>
-                            <img src="{{asset('home/img/serv/forex.jpg')}}" class="card-img-top position-relative img-fluid" alt="blog">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"></p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="single-blog-card card border-0 shadow-sm">
-                        <div class="blog-img">
-                            <span class="category position-absolute">Agriculture</span>
-                            <img src="{{asset('home/img/serv/agric.jpg')}}" class="card-img-top position-relative img-fluid" alt="blog">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"></p>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="single-blog-card card border-0 shadow-sm">
-                        <div class="blog-img">
-                            <span class="category position-absolute">Oil And Gas</span>
-                            <img src="{{asset('home/img/serv/oil.jpg')}}" class="card-img-top position-relative img-fluid" alt="blog">
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text"></p>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="action-btns mt-3 text-center">
-                <a href="services" class="btn text-center btn-primary">View All Services</a>
-            </div>
-        </div>
-    </section>
-    <section id="download" class="video-promo ptb-100">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-md-6" >
-                    <!-- TradingView Widget BEGIN -->
-                    <div class="tradingview-widget-container">
-                        <div class="tradingview-widget-container__widget"></div>
-                        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView</div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                            {
-                                "width": "100%",
-                                "height": 690,
-                                "defaultColumn": "overview",
-                                "screener_type": "crypto_mkt",
-                                "displayCurrency": "USD",
-                                "colorTheme": "light",
-                                "locale": "en",
-                                "isTransparent": false
-                            }
-                        </script>
-                    </div>
-                    <!-- TradingView Widget END -->
-                </div>
-                <div class="col-md-5">
-                    <!-- TradingView Widget BEGIN -->
-                    <div class="tradingview-widget-container">
-                        <div id="tradingview_d91c7"></div>
-                        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                        <script type="text/javascript">
-                            new TradingView.widget(
-                                {
-                                    "width": "100%",
-                                    "height": 690,
-                                    "symbol": "NASDAQ:AAPL",
-                                    "interval": "D",
-                                    "timezone": "Etc/UTC",
-                                    "theme": "light",
-                                    "style": "1",
-                                    "locale": "en",
-                                    "toolbar_bg": "#f1f3f6",
-                                    "enable_publishing": false,
-                                    "allow_symbol_change": true,
-                                    "container_id": "tradingview_d91c7"
-                                }
-                            );
-                        </script>
-                    </div>
-                    <!-- TradingView Widget END -->
-                </div>
-            </div>
-        </div>
-    </section><section class="testimonial-section ptb-100">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-9 col-lg-8">
-                    <div class="section-heading mb-5 text-center">
-                        <h2>What Our Clients Say About Us</h2>
-                        <p class="lead">
-                            Our expertise in financial services has bettered the lives of our clients greatly, their testimony has encouraged us greatly.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial-single shadow-sm gray-light-bg rounded p-4">
-                        <blockquote>
-                            This is remarkably one of the best Investments I have made this year                        </blockquote>
-                        <div class="client-img d-flex align-items-center justify-content-between pt-4">
-                            <div class="d-flex align-items-center">
-                                <img src="{{asset('home/img/pro.jpg')}}" alt="client" width="50" class="img-fluid rounded-circle shadow-sm mr-3"/>
-                                <div class="client-info">
-                                    <h5 class="mb-0">Alexandra lukas</h5>
-                                    <small class="mb-0">Investor</small>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial-single shadow-sm gray-light-bg rounded p-4">
-                        <blockquote>
-                            I keep recommending to my friends and family because of their overwhelmingly impressive financial services                        </blockquote>
-                        <div class="client-img d-flex align-items-center justify-content-between pt-4">
-                            <div class="d-flex align-items-center">
-                                <img src="{{asset('home/img/pro.jpg')}}" alt="client" width="50" class="img-fluid rounded-circle shadow-sm mr-3"/>
-                                <div class="client-info">
-                                    <h5 class="mb-0">Nora Woodward</h5>
-                                    <small class="mb-0">Investor</small>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="testimonial-single shadow-sm gray-light-bg rounded p-4">
-                        <blockquote>
-                            Great company With great investment services keep up the good work                        </blockquote>
-                        <div class="client-img d-flex align-items-center justify-content-between pt-4">
-                            <div class="d-flex align-items-center">
-                                <img src="{{asset('home/img/pro.jpg')}}" alt="client" width="50" class="img-fluid rounded-circle shadow-sm mr-3"/>
-                                <div class="client-info">
-                                    <h5 class="mb-0">David reed</h5>
-                                    <small class="mb-0">Investor</small>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-    </section>
-
-    <section class="our-blog-section ptb-100 gray-light-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading mb-5 text-center">
-                        <h2 class="text-center">Recent Verified Transactions</h2>
-                        <p class="lead">
-                            Below is a live update of transactions from our clients, it is updated every 5 minutes.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-
-
-                <div class="col-md-6">
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div
-                            class="view view-cascade narrower py-2 mx-4 mb-3 affix">
-
-                            <h6 class="text-white text-center">
-                                <span class="ti-bag mr-2 color-secondary"></span>
-                                Recent Deposits
-                            </h6>
-
-
-                        </div>
-                        <!--/Card image-->
-
-                        <div class="px-4">
-
-                            <div class="">
-                                <!--Table-->
-                                <table class="table table-hover mb-0 table-striped">
-                                    <tbody>
-                                        @foreach($deposits as $deposit)
-                                            @inject('option','App\Defaults\Custom')
-                                            <tr>
-                                                <!--<td class="color-secondary">-->
-                                                <!--    <span class="ti-check-box mr-2 color-secondary"></span>-->
-                                                <!--    {{$option->getInvestorUsername($deposit->user)}}-->
-                                                <!--</td>-->
-                                                <td>
-                                                    <b>${{number_format($deposit->amount,2)}}</b>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <!--Table body-->
-                                </table>
-                                <!--Table-->
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card card-cascade narrower">
-
-                        <!--Card image-->
-                        <div
-                            class="view view-cascade narrower py-2 mx-4 mb-3 affix">
-
-                            <h6 class="text-white text-center"><span class="ti-wallet mr-2 color-secondary"></span>Recent Withdrawals</h6>
-
-
-                        </div>
-                        <!--/Card image-->
-
-                        <div class="px-4">
-
-                            <div class="">
-                                <!--Table-->
-                                <table class="table table-hover mb-0 table-striped">
-                                    <tbody>
-                                        @foreach($withdrawals as $withdrawal)
-                                            @inject('option','App\Defaults\Custom')
-                                            <tr>
-                                                <!--<td class="color-secondary">-->
-                                                <!--    <span class="ti-check-box mr-2 color-secondary"></span>-->
-                                                <!--    {{$option->getInvestorUsername($withdrawal->user)}}-->
-                                                <!--</td>-->
-                                                <td>
-                                                    <b>${{number_format($withdrawal->amount,2)}}</b>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <!--Table body-->
-                                </table>
-                                <!--Table-->
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Table with panel -->
-
-    <!-- Table with panel --><!-- Section Blog -->
-
-    <!-- Section FAQ -->
-    <section class="promo-section ptb-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-9">
-                    <div class="section-heading mb-5">
-                        <h2>Frequently Asked Questions</h2>
-                        <p class="lead">
-                            Have Any Question?
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <!--pricing faq start-->
-            <div class="row">
-
-
                 <div class="col-lg-6">
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-1" data-toggle="collapse" role="button"
-                                 data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> What is {{$siteName}}?</h6>
-                            </div>
-                            <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
-                                    <p>{{$siteName}} our company provides a full investment service focused on the bitcoin and cryptocurrency market We are among the best platforms to invest and grow your bitcoin and other cryptocurrency</p>
-                                </div>
-                            </div>
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                            <p>Testmonials</p>
                         </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-2" data-toggle="collapse" role="button"
-                                 data-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I create my account?</h6>
-                            </div>
-                            <div id="collapse-1-2" class="collapse" aria-labelledby="heading-1-2"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
-                                    <p>Registration process is very easy and will take a few moments to complete Simply click CREATE ACCOUNT button  and fill in all the required fields</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-3" data-toggle="collapse" role="button"
-                                 data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I make a deposit?</h6>
-                            </div>
-                            <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
-                                    <p>To deposit funds in your trading account is quick and simple For your convenience you may choose one of the several available deposit methods To make a successful deposit please follow the steps below Login to your account Click on the DEPOSITS button in the DASHBOARD section Choose the deposit option And follow the steps to complete your transaction</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-4" data-toggle="collapse" role="button"
-                                 data-target="#collapse-1-4" aria-expanded="false" aria-controls="collapse-1-4">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How long does my deposit take before it can reflect on my {{$siteName}} account dashboard?</h6>
-                            </div>
-                            <div id="collapse-1-4" class="collapse" aria-labelledby="heading-1-4"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
-                                    <p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6">
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-5" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-5" aria-expanded="false" aria-controls="collapse-2-5">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I make a withdrawal?</h6>
-                            </div>
-                            <div id="collapse-2-5" class="collapse" aria-labelledby="heading-2-5"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>To make a withdrawal request click the WITHDRAW button at the top center of your {{$siteName}} account dashboard and input the required details to withdraw</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-6" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-6" aria-expanded="false" aria-controls="collapse-2-6">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How long does it take to process my withdrawal?</h6>
-                            </div>
-                            <div id="collapse-2-6" class="collapse" aria-labelledby="heading-2-6"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>Once we receive your withdrawal request we process immediately and send to your bitcoin wallet</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-7" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-7" aria-expanded="false" aria-controls="collapse-2-7">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Can I have more than one account?</h6>
-                            </div>
-                            <div id="collapse-2-7" class="collapse" aria-labelledby="heading-2-7"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>No you cannot have more than one account only investors on the vip plan are allowed to do so</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-8" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-8" aria-expanded="false" aria-controls="collapse-2-8">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Is this company properly registered?</h6>
-                            </div>
-                            <div id="collapse-2-8" class="collapse" aria-labelledby="heading-2-8"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>Yes we are officially and properly registered with the united kingdom company house our company registration number is 138898   and registered with the name {{$siteName}} LTD</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-9" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-9" aria-expanded="false" aria-controls="collapse-2-9">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Can I have more than two accounts?</h6>
-                            </div>
-                            <div id="collapse-2-9" class="collapse" aria-labelledby="heading-2-9"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>We do not allow multiple accounts except only for our investors on the VIP plan</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-10" data-toggle="collapse" role="button"
-                                 data-target="#collapse-2-10" aria-expanded="false" aria-controls="collapse-2-10">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> how many times can i make a deposit?</h6>
-                            </div>
-                            <div id="collapse-2-10" class="collapse" aria-labelledby="heading-2-10"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>You can make as many deposit as you want on any of our investment plans except the Starter Plan where you can only invest two times. And you can only withdraw once in the Starter plan.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                </div>
-
-            </div>
-            <!--pricing faq end-->
-        </div>
-    </section><section class="contact-us-section py-5">
-        <div class="container contact">
-            <div class="col-12 pb-3 message-box d-none">
-                <div class="alert alert-danger"></div>
-            </div>
-            <div class="row justify-content-around">
-                <div class="col-md-6">
-                    <div class="contact-us-form gray-light-bg rounded p-5">
-                        <h4>Ready to get started?</h4>
-                        <form method="post" action="https://{{$siteName}}.com/contact.php" class="contact-us-form">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input type="text" required="required" placeholder="Enter Name *" class="form-control" name="name">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input type="email" required="required" placeholder="Enter Email *" class="form-control" name="email">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input type="text" required="required" placeholder="Enter Subject" class="form-control" name="subject">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea required="required" placeholder="Message *" class="form-control" name="msg" rows="5"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 mt-3">
-                                    <button type="submit" title="Submit Your Message!" name="send" class="btn secondary-solid-btn">
-                                        Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="contact-us-content">
-                        <h2>Looking for a Profitable Investment Plan?</h2>
-                        <p class="lead">Search no! Click on the button below to get started.</p>
-
-                        <a href="{{route('register')}}" class="btn outline-btn align-items-center">Get Your Solution <span class="ti-arrow-right pl-2"></span></a>
-
-                        <hr class="my-5">
-
-                        <h5>Our Headquarters</h5>
-                        <address>
-                            {{$web->address}}
-                        </address>
-                        <br>
-                        <span>Phone: {{$web->phone}}</span> <br>
-                        <span>Email: <a href="mailto:{{$web->email}}" class="link-color">{{$web->email}}</a></span>
-
+                        <h2>What Clients are Saying about our services</h2>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Testimonials ends -->
+
+    <!-- Video starts -->
+    <div class="video">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 padding-right">
+                    <a href="https://www.youtube.com/watch?v=JUmdVYQ-0Aw" class="pulse popup-hero" target="_blank">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video ends -->
+
+
+    <!-- Blog starts -->
+    <section class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <div class="sub-heading">
+                            <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
+                            <p>Articles & News</p>
+                        </div>
+                        <h2>Latest & Greatest</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 r-mb">
+                    <div class="blog-wrapper">
+                        <rssapp-wall id="tUnw8WjWtYT1oJ3Z"></rssapp-wall>
+                        <script src="https://widget.rss.app/v1/wall.js" type="text/javascript" async></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Ends -->
+
 
 @endsection

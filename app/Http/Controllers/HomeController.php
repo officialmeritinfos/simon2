@@ -6,6 +6,7 @@ use App\Models\Deposit;
 use App\Models\GeneralSetting;
 use App\Models\Investment;
 use App\Models\Package;
+use App\Models\Service;
 use App\Models\Withdrawal;
 use Illuminate\Http\Request;
 
@@ -143,6 +144,36 @@ class HomeController extends Controller
         ];
 
         return view('home.buy_btc',$dataView);
+    }
+    //service detail
+    public function serviceDetail($id)
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $service = Service::where('id',$id)->firstOrFail();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => $service->title,
+            'service'  => $service
+        ];
+
+        return view('home.service_detail',$dataView);
+    }
+    //security
+    public function security()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Security Information',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.security',$dataView);
     }
 }
 
