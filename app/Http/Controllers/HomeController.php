@@ -35,7 +35,7 @@ class HomeController extends Controller
         $dataView = [
             'siteName'  => $web->name,
             'web'       => $web,
-            'pageName'  => 'About Us',
+            'pageName'  => 'Company Overview',
             'packages'  => Package::where('status',1)->get()
         ];
 

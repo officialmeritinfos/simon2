@@ -1,295 +1,243 @@
-@extends('home.base')
+@extends('home.innerBase')
 @section('content')
 
-    <!-- Hero area starts-->
-    <section class="hero-area ">
-        <div class="hero-banner">
-            <div class="inner-hero">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="hero-text">
-                                <h2>{{$pageName}}</h2>
-                                <span><a href="{{url('/')}}" class="home">Home</a> | <a href="#" class="disabled">{{$pageName}}</a></span>
-                            </div>
+    @push('body')
 
+        <body class="envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-294 elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-294">
+   @endpush
+    <div data-elementor-type="wp-post" data-elementor-id="294" class="elementor elementor-294" data-elementor-settings="[]">
+        <div class="elementor-section-wrap">
+            <style>
+                .fullscreen-bg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    overflow: hidden;
+                }
+                .fullscreen-bg__video {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                }
+                @media (min-aspect-ratio: 16/9) {
+                    .fullscreen-bg__video {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                @media (max-width: 767px) {
+                    .fullscreen-bg__video {
+                        width: auto;
+                        height: auto;
+                    }
+                    .fullscreen-bg{
+                        width: 1000px;
+                    }
+                }
+                #overlay {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0,0,0,0.3);
+                    z-index: 1;
+                    cursor: pointer;
+                }
+            </style>
+            <section class="ob-is-breaking-bad elementor-section elementor-top-section elementor-element elementor-element-f1ac91d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="f1ac91d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                <div class="elementor-background-overlay">
+                </div>
+                <div id="overlay"></div>
+                <div class="fullscreen-bg">
+                    <video autoplay muted loop playsinline class="fullscreen-bg__video">
+                        <source src="{{asset('home/static/temp/video/video5.mp4')}}" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div class="elementor-container elementor-column-gap-default" style="z-index: 2">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b36272c elementor-invisible" data-id="b36272c" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-467b2a0 ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="467b2a0" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h1 class="elementor-heading-title elementor-size-default">{{$pageName}}
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-293bf1b ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="293bf1b" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h5 class="elementor-heading-title elementor-size-default">We move, create opportunities and protect money for customers and clients worldwide
+                                    </h5>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
+            <section class="ob-is-breaking-bad elementor-section elementor-top-section elementor-element elementor-element-9e55886 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e55886" data-element_type="section" data-settings="{&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3dc3f31 elementor-invisible" data-id="3dc3f31" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-80935ab ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="80935ab" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h6 class="elementor-heading-title elementor-size-default">About Company
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-9193c26 ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="9193c26" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h2 class="elementor-heading-title elementor-size-default">For a secure and planned future
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-ca77d0c ob-harakiri-inherit elementor-widget elementor-widget-text-editor" data-id="ca77d0c" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="text-editor.default">
+                                <div class="elementor-widget-container">
+                                    <p>{{$siteName}} is one of the largest and most experienced international private equity firms. We have an established team of investment professionals, who are focused mainly on investment.</p>
+                                    <p>
+                                        {{$siteName}} is run by a team of trading experts who generate profits by buying and selling currencies, stocks, options and commodities on the foreign exchange market. We employ a variety of trading techniques to achieve the set goals for the client.
+                                    </p>
+                                    <p>
+                                        {{$siteName}} consists a team of financial market professionals assembled specifically in order to provide the best possible trading conditions to its customers. Our specialists have been involved in the development of technical specification for designing an up-to-date platform that is suitable for both beginners and experienced traders.
+                                    </p>
+                                    <p>
+                                        As long as we have existed we have been trying to leverage lower risk and higher profits for our customers through innovative and insightful analysis, information dispersion, and expert assistance.
+                                        Our team of professionals is composed of experienced and skilled experts and professionals, who bring a diverse and in depth knowledge to the entire investing process.
+                                    </p>
+                                    <p>
+                                        Our multi-asset investment approach is aimed at what matters helping you reach your desired outcomes. Portfolio management is the heart of what we do. From our current research studying the market, we are expecting to trigger a long term investment trading strategy which would give our new members guaranteed return on investment for the stipulated time.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-2e76fa3 elementor-widget elementor-widget-button" data-id="2e76fa3" data-element_type="widget" data-settings="{&quot;_ob_butterbutton_use_it&quot;:&quot;no&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="button.default">
+                                <div class="elementor-widget-container">
+                                    <div class="elementor-button-wrapper">
+                                        <a href="{{route('register')}}" class="elementor-button-link elementor-button elementor-size-md elementor-animation-wobble-horizontal" role="button">
+                        <span class="elementor-button-content-wrapper">
+                          <span class="elementor-button-text">Start Membership <i class="fa fa-arrow-circle-right"></i>
+                          </span>
+                        </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3dc3f31 elementor-invisible" data-id="3dc3f31" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-80935ab ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="80935ab" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <img width="1600" height="1024" src="{{asset('home/static/temp/wp-content/uploads/sites/56/2021/08/about.jpg')}}" class="attachment-full size-full" alt="" loading="lazy" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="ob-is-breaking-bad elementor-section elementor-top-section elementor-element elementor-element-4d222d8 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4d222d8" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                <div class="elementor-background-overlay">
+                </div>
+                <div class="elementor-container elementor-column-gap-default">
+                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6bf193d" data-id="6bf193d" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                        <div class="elementor-widget-wrap elementor-element-populated">
+                            <div class="elementor-element elementor-element-96bfd81 ob-harakiri-inherit elementor-invisible elementor-widget elementor-widget-heading" data-id="96bfd81" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h6 class="elementor-heading-title elementor-size-default">Company Value
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-6bea625 ob-harakiri-inherit elementor-invisible elementor-widget elementor-widget-heading" data-id="6bea625" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInRight&quot;,&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h2 class="elementor-heading-title elementor-size-default">Its all about your Future
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-f4d2de9 elementor-widget__width-initial ob-harakiri-inherit elementor-invisible elementor-widget elementor-widget-text-editor" data-id="f4d2de9" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInLeft&quot;,&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="text-editor.default">
+                                <div class="elementor-widget-container">
+                                    <p>We focus on comprehensive financial advice and investment services
+                                    </p>
+                                </div>
+                            </div>
+                            <section class="ob-is-breaking-bad ob-bb-inner elementor-section elementor-inner-section elementor-element elementor-element-db01ba1 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="db01ba1" data-element_type="section" data-settings="{&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                                <div class="elementor-container elementor-column-gap-default">
+                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-a3879b8 elementor-invisible" data-id="a3879b8" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-9f05554 ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-id="9f05554" data-element_type="widget" data-settings="{&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="elementskit-icon-box.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ekit-wid-con" >
+                                                        <!-- link opening -->
+                                                        <!-- end link opening -->
+                                                        <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-   ">
+                                                            <div class="box-body">
+                                                                <h3 class="elementskit-info-box-title">
+                                                                    Vision
+                                                                </h3>
+                                                                <p>In a fast-moving and increasingly complex global economy, our success depends on how faithfully we adhere to our core principles: delivering exceptional client service and acting with integrity.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-9ddae7c elementor-invisible" data-id="9ddae7c" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:120,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-0c4c0a6 ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-id="0c4c0a6" data-element_type="widget" data-settings="{&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="elementskit-icon-box.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ekit-wid-con" >
+                                                        <!-- link opening -->
+                                                        <!-- end link opening -->
+                                                        <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-   ">
+                                                            <div class="box-body">
+                                                                <h3 class="elementskit-info-box-title">
+                                                                    Mission
+                                                                </h3>
+                                                                <p>Our mission is to generate world-class investment returns over the long term. We aspire to do so in a way that makes our partners and portfolio companies proud, as we build a unique, global company.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-abf2b90 elementor-invisible" data-id="abf2b90" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;animation_delay&quot;:240,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                                        <div class="elementor-widget-wrap elementor-element-populated">
+                                            <div class="elementor-element elementor-element-a9e6bcc ekit-equal-height-enable elementor-widget elementor-widget-elementskit-icon-box" data-id="a9e6bcc" data-element_type="widget" data-settings="{&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="elementskit-icon-box.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="ekit-wid-con" >
+                                                        <!-- link opening -->
+                                                        <!-- end link opening -->
+                                                        <div class="elementskit-infobox text-center text- icon-top-align elementor-animation-   ">
+                                                            <div class="box-body">
+                                                                <h3 class="elementskit-info-box-title">
+                                                                    Guarantee
+                                                                </h3>
+                                                                <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption, we are the first and the best in investment management.
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    <!-- Hero area ends -->
-
-    <!-- About Area Starts -->
-    <section class="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <div class="section-title">
-                            <div class="sub-heading">
-                                <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
-                                <p>Who we are</p>
-                            </div>
-                            <h2>Building Financial Stability</h2>
-                        </div>
-
-                        <div class="text-content">
-                            <p>
-                                We started by providing smart, simple investing, without the high fees and account minimums
-                                associated with traditional investment management. We invest your money in a globally
-                                diversified portfolio of low-cost index funds, and our cutting-edge technology helps you
-                                earn the best possible return, while optimizing your tax bill. This means we do things like
-                                automatic rebalancing, dividend reinvesting, and tax loss harvesting — services that were
-                                only available to the ultra rich until now or that most people found too time-consuming
-                                and tedious to do on their own.
-                            </p>
-                            <p>
-                                Our expert financial advisors are always available when you need them. They can help plan
-                                your financial milestones and answer questions you might have about potential risks or
-                                what sort of investment accounts you should have.
-                            </p>
-
-                            <div class="progress-wrapper">
-                                <div class="progress-one">
-                                    <div class="progress-bar" data-percent="75" data-duration="1000"></div>
-                                    <h5>Asset Management</h5>
-                                </div>
-
-                                <div class="progress-two">
-                                    <div class="progress-bar" data-percent="95" data-duration="1000"></div>
-                                    <h5>Financial Investment</h5>
-                                </div>
-                            </div>
-
-                            <p>
-                                Investing is just one part of your financial picture. So, we've introduced more ways to
-                                reach your goals and manage your money. High interest savings. Commission-free trading.
-                                And features — like automatically investing your spare change — that make it easier to
-                                save for your future. That's because we believe that everyone should have access to the
-                                tools they need to make smart financial choices.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 r-margin-top">
-
-                    <div class="about-img">
-                        <img src="{{asset('home/images/about-image.png')}}" alt="team">
-                        <img src="{{asset('home/images/abt-overlay.png')}}" alt="overlay" class="overlay">
-                    </div>
-
-                    <div class="experience">
-                        <span>15</span>
-                        <p>Years of experience</p>
-                    </div>
-
-                    <div class="quote">
-                        <h5>We’re Committed For Creating Change.</h5>
-                        <div class="quote-info">
-                            <img src="{{asset('home/images/small-image.png')}}" alt="man">
-
-                            <div class="meta-info">
-                                <p>Joseph Colman</p>
-                                <span>CEO & Founder</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12" style="margin-top: 8rem;">
-                    <p>{{$siteName}} is an automatic online investment platform established by a team of professional traders focusing mainly
-                        on crypto currency trading over multiple exchanges and market. Adding value to the team of like minded
-                        businessmen specialist in Bitcoin mining. Our company has been growing fast by expanding trade industry
-                        and mining techniques and rolling more elite traders and Miners respectively. {{$siteName}} is helping to educate,
-                        provide service for, secure, protect and ultimately profit from this emerging industry.
-                        Anyone all over the world can join {{$siteName}} and began earning passive income by taking advantage of
-                        our expertise in Bitcoin mining and crypto currency trading.
-                    </p>
-                    <p>
-                        Recently, our company made a successful attempt the international technology market with an
-                        offer of profitable investments in financial investments. Our main aim is to provide safe and
-                        secured returns to our investors with effective and profitable trading and mining solutions
-                        where investors need little or no experience at all about the same. Our investors can choose
-                        one of three lucrative yet simple investment plan with {{$siteName}}. If you want to join us, to earn
-                        over a period of long time then all you need to do is to register on our website, make deposit
-                        and sit back and relax while our experts work for you. We are expanding our features by providing
-                        you instant deposit and withdrawals. Use the possibilities of the company and earn on daily basis.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- About area ends -->
-
-    <!-- Offer area starts -->
-    <section class="offer" style="margin-top: -8rem;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title">
-                        <div class="sub-heading">
-                            <p>OUR PURPOSE</p>
-                        </div>
-                        <h2>Our common Purpose is Creating opportunities to rise.</h2>
-                    </div>
-                </div>
-
-                <div class="col-md-6 row justify-content-center">
-                    <div class="col-lg-6 r-mb">
-                        <div class="offer-wrapper">
-                            <iconify-icon icon="fluent-mdl2:design"></iconify-icon>
-                            <h5>Explore With Us</h5>
-                            <p>
-                                Seize the opportunity to grow your capital in the stock market by copying the trades of top
-                                preforming traders in our investment programme
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 r-mb">
-                        <div class="offer-wrapper">
-                            <iconify-icon icon="fluent:archive-settings-24-regular"></iconify-icon>
-                            <h5>Investment Management</h5>
-                            <p>
-                                We deliver active stock investment strategies across public and private markets and custom
-                                solutions to institutional and individual investors.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="offer-wrapper">
-                            <iconify-icon icon="carbon:application-web"></iconify-icon>
-                            <h5>High Frequency Trading</h5>
-                            <p>
-                                Global institutions, leading hedge funds and industry innovators turn to Century21 company's
-                                trading advice and market-making services.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 margin-top">
-                        <div class="offer-wrapper">
-                            <iconify-icon icon="ant-design:radar-chart-outlined"></iconify-icon>
-                            <h5>Wealth Management</h5>
-                            <p>
-                                We help people, businesses and institutions build, preserve and manage wealth so they can
-                                pursue their financial goals.
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-    </section>
-    <!-- Offer area ends -->
-
-    <!-- Counter starts -->
-    <section class="counter" style="margin-top: -12rem;">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 r-mb">
-                    <div class="counter-img">
-                        <img src="{{asset('home/images/counter-img.png')}}" alt="men">
-                        <img class="overlay" src="{{asset('home/images/counter-overlay.png')}}" alt="overlay">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="section-title">
-                        <div class="sub-heading">
-                            <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
-                            <p>Our achievements</p>
-                        </div>
-                        <h2>Building a sustainable finance for you</h2>
-                    </div>
-
-                    <div class="text-content">
-                        <p>Humans lie, data don't. All independently audited and verified.</p>
-
-                        <div class="counter-wrapper">
-                            <div class="single-counter">
-                                <h2>50k+</h2>
-                                <p>Investors</p>
-                            </div>
-
-                            <div class="single-counter pt-28">
-                                <img src="{{asset('home/images/counter-arrow.png')}}" alt="arrow">
-                                <h2>500M+</h2>
-                                <p>Total funds invested</p>
-                            </div>
-
-                            <div class="single-counter pt-28">
-                                <h2>300M+</h2>
-                                <p>profit funds paid out</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Counter ends -->
-
-    <!-- Choose start -->
-    <section class="choose">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 r-mb">
-                    <div class="choose-content">
-                        <div class="section-title">
-                            <div class="sub-heading">
-                                <img src="{{asset('home/images/section-title-icon.png')}}" alt="caret">
-                                <p>Why choose us</p>
-                            </div>
-                            <h2>We Are Different From Others</h2>
-                        </div>
-
-                        <div class="text-content">
-                            <p class="first-child"></p>
-
-                            <div class="list-wrapper">
-                                <div class="list-content">
-                                    <i class="fas fa-check"></i>
-                                    <p>We use the latest technology to protect your information and financial transactions.</p>
-                                </div>
-
-                                <div class="list-content">
-                                    <i class="fas fa-check"></i>
-                                    <p>From strategy to analysis, our tools help you keep track of your finances with ease.</p>
-                                </div>
-
-                                <div class="list-content">
-                                    <i class="fas fa-check"></i>
-                                    <p>We also participate in asset protection programs to further secure your funds.</p>
-                                </div>
-
-                                <div class="list-content">
-                                    <i class="fas fa-check"></i>
-                                    <p>We are providing investors access to investments previously available to the top 1%.</p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-
-                    <div class="counter-img">
-                        <img src="{{asset('home/images/choose-img.png')}}" alt="women">
-                        <img class="overlay" src="{{asset('home/images/counter-overlay.png')}}" alt="overlay">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- Choose ends -->
+    </div>
 
 @endsection
