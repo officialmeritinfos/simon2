@@ -187,6 +187,7 @@
                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a href="{{url('nft')}}" class="elementor-sub-item" tabindex="-1">NFT</a></li>
                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24"><a href="{{url('forex')}}" class="elementor-sub-item" tabindex="-1">Foreign Exchange</a></li>
                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25"><a href="{{url('stocks')}}" class="elementor-sub-item" tabindex="-1">Stocks & ETFs</a></li>
+                                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25"><a href="{{url('agriculture')}}" class="elementor-sub-item" tabindex="-1">Agriculture</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16">
