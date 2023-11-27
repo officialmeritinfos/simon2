@@ -1,189 +1,143 @@
-@extends('home.base')
-
+@extends('home.innerBase')
 @section('content')
-    <!-- Hero area starts-->
-    <section class="hero-area ">
-        <div class="hero-banner">
-            <div class="inner-hero">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="hero-text">
-                                <h2>{{$pageName}}</h2>
-                                <span><a href="{{url('/')}}" class="home">Home</a> | <a href="#" class="disabled">{{$pageName}}</a></span>
-                            </div>
 
+    @push('body')
+
+        <body class="envato_tk_templates-template envato_tk_templates-template-elementor_header_footer single single-envato_tk_templates postid-294 elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-294">
+        @endpush
+        <div data-elementor-type="wp-post" data-elementor-id="294" class="elementor elementor-294" data-elementor-settings="[]">
+            <div class="elementor-section-wrap">
+                <style>
+                    .fullscreen-bg {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        overflow: hidden;
+                    }
+                    .fullscreen-bg__video {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: auto;
+                    }
+                    @media (min-aspect-ratio: 16/9) {
+                        .fullscreen-bg__video {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                        .fullscreen-bg__video {
+                            width: auto;
+                            height: auto;
+                        }
+                        .fullscreen-bg{
+                            width: 1000px;
+                        }
+                    }
+                    #overlay {
+                        position: absolute;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(0,0,0,0.3);
+                        z-index: 1;
+                        cursor: pointer;
+                    }
+                </style>
+                <section class="ob-is-breaking-bad elementor-section elementor-top-section elementor-element elementor-element-f1ac91d elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="f1ac91d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                    <div class="elementor-background-overlay">
+                    </div>
+                    <div id="overlay"></div>
+                    <div class="fullscreen-bg">
+                        <video autoplay muted loop playsinline class="fullscreen-bg__video">
+                            <source src="{{asset('home/static/temp/video/video12.mp4')}}" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                    <div class="elementor-container elementor-column-gap-default" style="z-index: 2">
+                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b36272c elementor-invisible" data-id="b36272c" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                            <div class="elementor-widget-wrap elementor-element-populated">
+                                <div class="elementor-element elementor-element-467b2a0 ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="467b2a0" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h1 class="elementor-heading-title elementor-size-default">{{$pageName}}
+                                        </h1>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-293bf1b ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="293bf1b" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h5 class="elementor-heading-title elementor-size-default">
+                                            Our Terms of Operations
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
+                <section class="ob-is-breaking-bad elementor-section elementor-top-section elementor-element elementor-element-9e55886 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e55886" data-element_type="section" data-settings="{&quot;_ob_bbad_use_it&quot;:&quot;yes&quot;,&quot;_ob_bbad_sssic_use&quot;:&quot;no&quot;,&quot;_ob_glider_is_slider&quot;:&quot;no&quot;}">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="" data-id="3dc3f31" data-element_type="column" data-settings="{&quot;animation&quot;:&quot;fadeInLeft&quot;,&quot;_ob_bbad_is_stalker&quot;:&quot;no&quot;,&quot;_ob_teleporter_use&quot;:false,&quot;_ob_column_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_column_has_pseudo&quot;:&quot;no&quot;}">
+                            <div class="elementor-widget-wrap elementor-element-populated">
+                                <div class="elementor-element elementor-element-80935ab ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="80935ab" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h6 class="elementor-heading-title elementor-size-default">{{$siteName}}
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-9193c26 ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="9193c26" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                        <h2 class="elementor-heading-title elementor-size-default">Terms of Use
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-ca77d0c ob-harakiri-inherit elementor-widget elementor-widget-text-editor" data-id="ca77d0c" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                        <h4>1. Introduction</h4>
+                                        <p>{{$siteName}} is an automated investment platform available online and through mobile applications.</p>
+                                        <p>We offer an automated investment service. As our Client, we will manage your investment on your behalf in a very low cost manner to maximize your returns. By using our website, you enter into a series of legally binding agreements. You also agree to our Privacy Policy which covers how we collect, use, share and store your personal information.</p>
+
+                                        <p>When you access our website ("our website" (which includes our blog), "our app" or “{{$siteName}}") as a User and Client, you're agreeing to be bound by the following Terms of Use. Please therefore take the time to read the following binding Terms of Use below. For the purpose of this agreement a User is an individual who uses our website to evaluate our service, or for educational purposes and a Client is an individual who signs up on {{$siteName}} that entitles the Client to have her or his investment portfolio managed by {{$siteName}}. This Agreement, as well as the Privacy Policy applies to both Users and Clients. If you elect to become a Client, you will be subject to these Terms of Use, our Client Agreement, our Privacy Policy and any additional terms to which you agree when you create and fund an investment plan.</p>
+
+                                        <h4>2. Obligations</h4>
+                                        <p>You must be 18 or older to access our website or mobile applications.</p>
+
+                                        <p>{{$siteName}} is intended solely for individuals who are 18 or older. Any access to or use of {{$siteName}} by anyone under 18 is unauthorized, unlicensed, and in violation of these Terms of Use. By accessing or using {{$siteName}}, you represent and warrant that you are 18 or older.</p>
+                                        <p>In order to access certain features of {{$siteName}}, you must register to create an account ("User Account"). When you register, you will be asked to choose a password, which you will be required to use to access your User Account. {{$siteName}} has physical, electronic and procedural safeguards that comply with regulatory standards to guard Users' and Clients' non-public personal information (see Privacy Policy). You are responsible for safeguarding your password and other User Account information. You agree not to disclose your password to any third party and you will notify {{$siteName}} immediately if your password is lost or stolen or if you suspect any unauthorized use of your User Account. As a User you agree that you shall be solely responsible for any activities or actions under your User Account, whether or not you have authorized such activities or actions. You agree that the information you provide to us on account registration through our website or mobile applications will be true, accurate, current, and complete.</p>
+
+                                        <h4>3. Disclaimer and Limit of Liability</h4>
+                                        <p>{{$siteName}} cannot be held responsible for any financial insights or recommendations provided to users.</p>
+
+                                        <p>For a User who is not a Client You understand and acknowledge that the investment results you could obtain from investment information and financial insights provided by {{$siteName}} cannot be guaranteed and that {{$siteName}} Finance cannot be held responsible. All investments entail a risk of loss and that you may lose money. Investment management services may be offered to individuals who become clients, at the sole discretion of {{$siteName}}. Your election to engage our investment services are subject to your explicit enrollment and acceptance of this Terms of Use.. You agree and understand that your use of {{$siteName}} is for educational purposes only and is not intended to provide legal, tax or financial planning advice. You agree as a User that you are responsible for your own investment research and investment decisions, that {{$siteName}} is only one of many tools you may use as part of a comprehensive investment education process, that you should not and will not rely on {{$siteName}} as the primary basis of your investment decisions and, except as otherwise provided for herein, {{$siteName}} will not be liable for decisions/actions you take or authorize third parties to take on your behalf based on information you receive as a User of {{$siteName}} or information you otherwise see on our website.</p>
+
+                                        <h4>4. Termination</h4>
+                                        <p>Each of us can end this agreement at any time, subject to the maturity of all plans. We may terminate or suspend your access to {{$siteName}}, at any time with prior notice to you if your account is found to be fraudulent.</p>
+
+                                        <p>We will fully cooperate with any law enforcement authorities or court order requesting or directing us to disclose the identity of anyone posting, publishing, or otherwise making available any User information, emails, or other materials that are believed to violate these Terms of Use. Any suspension, termination, or cancellation shall not affect your obligations to {{$siteName}} under these Terms of Use (including but not limited to ownership, indemnification, and limitation of liability), which by their sense and context are intended to survive such suspension, termination, or cancellation.</p>
+
+                                        <h4>5. General Terms</h4>
+                                        <p>In the event that any provision in these Terms of Use is held to be invalid or unenforceable, the remaining provisions will remain in full force and effect. The failure of a party to enforce any right or provision of these Terms of Use will not be deemed a waiver of such right or provision. You may not assign this Agreement (by operation of law or otherwise) without the prior written consent of {{$siteName}}, and any prohibited assignment will be null and void.</p>
+
+                                        <p>{{$siteName}} may assign this Terms of Use Agreement or any rights hereunder without your consent. The relationship of the parties under these Terms of Use is that of independent contractors, and these Terms of Use will not be construed to imply that either party is the agent, employee, or joint venture of the other. Note that if you elect to become a Client, the relationship of the parties will be governed by these Terms of Use, our Privacy Policy and any additional terms to which you agree when you create and fund an investment account. We reserve the right to change this Agreement by posting a revised Terms of Use and we agree that changes cannot be retroactive. If you don't agree with these changes, you must stop using {{$siteName}}.</p>
+                                    </div>
+                                </div>
+                                <div class="elementor-element elementor-element-2e76fa3 elementor-widget elementor-widget-button" data-id="2e76fa3" data-element_type="widget" data-settings="{&quot;_ob_butterbutton_use_it&quot;:&quot;no&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="button.default">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
-    </section>
-    <!-- Hero area ends -->
-    <!-- CONTENT-1
-			============================================= -->
-    <section id="content-1" class="content-1 wide-60 inner-page-hero content-section division">
-        <div class="container">
-            <div class="row d-flex align-items-center">
-
-
-                <!-- TEXT BLOCK -->
-                <div class="col-md-12 col-lg-12 order-last order-md-2">
-                    <div class="txt-block left-column wow fadeInRight">
-
-                        <p><i>This Terms of Service was last updated on January 1, 2022.</i></p>
-                        <h3 class="text-center" style="font-weight: bolder;">Terms and Conditions </h3>
-                        <p>Carefully read the rules for using the {{$siteName}} service. By accessing or using the site, you agree
-                            to comply with the conditions described in this document. If you do not agree to these terms,
-                            do not use this website.
-                            These Terms of Use (the “Terms”) apply to your access to and use of the {{$siteName}} website
-                            (the “Site”).
-                        </p>
-                        <h3 class="text-center" style="font-weight: bolder;">Introduction</h3><p>
-                            {{$siteName}} reserves the right to change or modify the terms and conditions contained in these
-                            Terms or any other policies or guidelines on the Site, at any time and its sole discretion. We
-                            will provide notice of these changes by posting the revised Terms on the Site and changing
-                            the “Last edited” date at the top of the Terms, or providing other notification methods that
-                            {{$siteName}} will determine at its own discretion each time. Using a specific form of notification in
-                            some cases does not obligate us to use the same form in other cases. Any changes or
-                            modifications will take effect immediately after the changes are posted on the Site and will
-                            apply to your subsequent use of the Site. You waive any right you may require to receive
-                            special notice of such changes or modifications. Your continued use of this Site will confirm
-                            your acceptance of such changes or modifications; therefore, you must review the Terms
-                            and the applicable policies whenever you use the Site to understand the terms and
-                            conditions applicable to such use. The latest version of the Terms can be viewed by clicking
-                            on the “Terms of Use” hypertext link at the bottom of our web pages. If you do not agree to
-                            the Terms and Conditions in accessing or using the Site, you must stop using the Site.</p>
-                        <h3 class="text-center" style="font-weight: bolder;">Foreword</h3>
-                        <p>{{$siteName}} is an online platform that allows
-                            you to build up your blockchain portfolio by allowing to invest in diverse blockchain and
-                            asset management portfolios. We are experts with over 7 years of experiences and all our staff
-                            are task with the responsibility of ensuring the maximum return on every investment.</p>
-                        <h3 class="text-center" style="font-weight: bolder;">
-
-                            User responsibilities</h3><p>
-                            By accessing or using the site, you represent and warrant that you have not previously been
-                            suspended or removed from the site. Your age should allow you to provide an official state
-                            document identifying your identity. You can use our Services only if you can legally enter into
-                            an agreement with these Terms and Conditions in accordance with applicable law. If you use
-                            our Services, you agree to do so in accordance with these Terms and applicable laws and
-                            regulations. You also represent and warrant that you will not use the Site if the laws of your
-                            country prohibit you from doing so in accordance with these Terms.
-                        </p><p>
-                            <b>
-                                Registration and Account</b></p><br>
-                        To access and use certain functions on the Site, you need to create an account in {{$siteName}}(“Account”). You agree to:<br>
-                        1. Provide accurate, current and complete information when creating or updating an
-                        Account;<br>
-                        2. Maintain and timely update information about your Account;<br>
-                        3. Maintain the security and privacy of your credentials and restrict access to your account
-                        and your computer;<br>
-                        4. Immediately notify {{$siteName}} if you discover or otherwise suspect any security breaches
-                        associated with the Site;<br>
-                        5. Enable two-step authentication using a mobile application<br>
-                        6. We ake responsibility for all actions that occur under your account, and assume all the risks<br>
-                        ofexcept for unauthorized access without active two-step authentication. In no event will {{$siteName}} be liable
-                        for unauthorized access to accounts with inactive two-step authentication.<br><b>
-                            Suspension and Account Closure</b><br>
-                        We may, without any obligation to you or any third party, deny you permission to open an
-                        account, suspend your account, or terminate your account or your use of one or more of the
-                        Services. Such actions may be taken as a result of:<br>
-                        - Account Inactivity ;<br>
-                        - Failure to identify yourself if we believe that your account has been hacked so that we can
-                        comply with laws or regulations;<br>
-                        - As a result of your violation of the terms of this Agreement;<br>
-                        If you have cryptocurrency remaining on your account that has been suspended or closed,
-                        you can access this cryptocurrency and bring it to the external address of the wallet (unless
-                        prohibited by law or court order). If you are unable to log in to your account because it has
-                        been suspended, you must contact us at <b>{{$web->email}}</b> to process such a withdrawal.
-                        You may terminate this Agreement at any time by closing your account and ceasing to use
-                        the Services. Upon termination of this Agreement and your account, you continue to be
-                        responsible for all transactions made while the account remains active.<br><b>
-                            Inactive accounts</b><br>
-                        An inactive account is defined as a user account with no login or other activity for more than
-                        180 days. {{$siteName}} may, but is not required to, transfer funds from an account to a protected
-                        “Cold Storage” account for safekeeping. When a user resumes action in an inactive account,
-                        funds can be obtained from “Cold Storage” by contacting customer support to check and
-                        restore the account.<br><b>
-                            Transaction limits and refunds</b><br>
-                        {{$siteName}} reserves the right to change the limits on deposits, withdrawals, conversions, storage
-                        and speed in your account, as well as the availability of the Services, if we consider it
-                        necessary. After a cryptocurrency transaction has been initiated, it cannot be canceled or
-                        refunded.<br><b>
-                            Privacy policy</b><br>
-                        Please refer to our Privacy Policy for information on how we collect, use and share your
-                        personal information.
-                        <br><b>
-                            Internet Data Privacy</b><br>
-                        Transmission of data or information (including e-mail) over the Internet or other public
-                        networks is not 100% secure and may be lost, intercepted or altered during transport.
-                        Accordingly, {{$siteName}} shall be liable for any damages that you may incur or expenses that
-                        you may incur as a result of any transmissions over the Internet or other public networks,
-                        including without limitation of transmissions, including exchanging email with {{$siteName}}containing
-                        your personal data. Although {{$siteName}} will make commercially reasonable efforts to
-                        protect the confidentiality of the information you provide to {{$siteName}} and processes such
-                        information in accordance with the {{$siteName}} Privacy Policy, in no case will the information you
-                        provide to {{$siteName}} be considered confidential, create any fiduciary obligations for you by {{$siteName}},
-                        or lead to any liability to you by {{$siteName}} in the event of inadvertent disclosure of such
-                        information by {{$siteName}} or access by a third persons without the consent of {{$siteName}}.<br><b>
-                            Cryptocurrency transactions</b><br>
-                        {{$siteName}} guarantees the value of cryptocurrency and will bear the loss that arises from the change in prices.<br>
-                        The cryptocurrency network is managed by a decentralized network of independent third
-                        parties. As soon as a transaction request is sent to the cryptocurrency network through the
-                        Services, the cryptocurrency network will automatically terminate or reject the request, and
-                        you cannot cancel or otherwise change your transaction request. You acknowledge and
-                        agree that {{$siteName}} is not responsible for any errors or omissions that you make in connection
-                        with any cryptocurrency transaction initiated through the Services. Services help you send a
-                        cryptocurrency transaction request for confirmation in a cryptocurrency network. However,
-                        {{$siteName}} does not control the cryptocurrency network and, therefore, cannot and does not
-                        guarantee that any transaction request you send through the Services will be executed. You
-                        acknowledge and agree that requests for transactions that you send through the Services
-                        may not be executed or may be significantly delayed by the cryptocurrency network. When
-                        you execute a transaction request through the Services, you authorize us to send a
-                        transaction request to the cryptocurrency network in accordance with the instructions that
-                        you provide through the Services.<br><b>
-                            Third Party Applications</b><br>
-                        If you give explicit permission to a third party to connect to your account either through a
-                        third party product or through {{$siteName}}, you acknowledge that granting permission to a third
-                        party to perform certain actions on your behalf does not relieve you of any of your obligations
-                        under this Agreement. In addition, you acknowledge and agree that you will not be
-                        responsible for {{$siteName}} and will not relieve {{$siteName}} of any liability arising from the actions or
-                        omissions of this third party in connection with the permissions granted by you.<br>
-                        <b>
-                            Force Majeure</b><br>
-                        We are not responsible for delays, malfunctions or interruptions in service, which are directly
-                        or indirectly related to any cause or condition beyond our control, including, without
-                        limitation, any delays or malfunctions as a result of a natural disaster, civil act or military
-                        authorities, acts of terrorism, civil unrest, wars, strikes or other labor disputes, fires,
-                        interruptions in telecommunications or Internet services or services of network providers,
-                        equipment and/or software failure, other disasters or any other events that occur beyond our
-                        reasonable control and should not affect the validity and applicability of any remaining
-                        provisions.<br><b>
-                            Change of Management</b><br>
-                        In the event {{$siteName}} is acquired or merged with a third party, we reserve the right under any of
-                        these circumstances to transfer or assign the information we received from you as part of
-                        such a merger, acquisition, sale or other change of management.<br>
-                        <b>
-                            Damages</b><br>
-                        You agree to protect, indemnify and secure {{$siteName}}, its independent contractors, service
-                        providers and consultants, as well as their respective directors, employees and agents from
-                        any claims, damages, costs, obligations and expenses (including but not limited to
-                        reasonable attorney fees) arising from or related to:<br>
-                        1. Your use of the Site;<br>
-                        2. Any user content or feedback you provide;<br>
-                        3. Your violation of these Terms;<br>
-                        4. Your violation of any rights of another person;<br>
-                        5. Your behavior in connection with the site.<br>
-                        In some jurisdictions, consumer compensation is limited, so some or all of the above
-                        reimbursement provisions may not apply to you. If you are obligated to indemnify us, we will
-                        have the right, at our own discretion, to control any action or proceeding and determine
-                        whether we want to settle it, and if so, under what conditions.<br>
-                    </div>
-                </div>	<!-- END TEXT BLOCK -->
-
-
-            </div>	   <!-- End row -->
-        </div>	   <!-- End container -->
-    </section>	<!-- END CONTENT-1 -->
 
 @endsection

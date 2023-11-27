@@ -175,5 +175,110 @@ class HomeController extends Controller
 
         return view('home.security',$dataView);
     }
+
+    public function realEstate()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Real Estate',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.estates',$dataView);
+    }
+    public function nft()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'NFT',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.nft',$dataView);
+    }
+    public function gold()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Gold',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.gold',$dataView);
+    }
+    public function retirement()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Retirement',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.retirement',$dataView);
+    }
+    public function forex()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Foreign Exchange',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.forex',$dataView);
+    }
+    public function stocks()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Stocks & ETFs',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.stocks',$dataView);
+    }
+    public function agriculture()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Agriculture',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.agriculture',$dataView);
+    }
+    public function career()
+    {
+        $web = GeneralSetting::where('id',1)->first();
+
+        $dataView = [
+            'siteName'  => $web->name,
+            'web'       => $web,
+            'pageName'  => 'Career',
+            'packages'  => Package::where('status',1)->get()
+        ];
+
+        return view('home.career',$dataView);
+    }
 }
 

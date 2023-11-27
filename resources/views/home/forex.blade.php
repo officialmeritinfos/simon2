@@ -76,7 +76,7 @@
                                 <div class="elementor-element elementor-element-293bf1b ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="293bf1b" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
                                         <h5 class="elementor-heading-title elementor-size-default">
-                                            You can now invest in real estate and own physical properties with {{$siteName}}
+                                            Our Experts covers you in all complex aspects of the forex market. You need not worry about anything.
                                         </h5>
                                     </div>
                                 </div>
@@ -91,21 +91,23 @@
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-80935ab ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="80935ab" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h6 class="elementor-heading-title elementor-size-default">About Real Estate
+                                        <h6 class="elementor-heading-title elementor-size-default">About Foreign Exchange
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-9193c26 ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="9193c26" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <h2 class="elementor-heading-title elementor-size-default">Create Passive Income Through Real Estate
+                                        <h2 class="elementor-heading-title elementor-size-default">Invest In The Forex Market The Right Way
                                         </h2>
                                     </div>
                                 </div>
                                 <div class="elementor-element elementor-element-ca77d0c ob-harakiri-inherit elementor-widget elementor-widget-text-editor" data-id="ca77d0c" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
-                                        <p>Real estate investing involves the purchase, ownership, management, rental and/or sale of real estate for profit.</p>
                                         <p>
-                                            Real estate is an asset form with liquidity relative to other investments, it is also capital intensive and is highly cash flow dependent. If these factors are not well understood and managed by the investor, real estate becomes a risky investment. This is why investing with Quantum Finance is the best option, we don't only make real estate investment cost effective, every risk involved is also curtailed leaving you with guaranteed profits.
+                                            Forex is one of those areas that most people feel is complicated. In reality, it's like many other forms of investment where a little knowledge can be dangerous. The good news for people out there looking to invest in forex is that we at {{$siteName}} are here to help.
+                                        </p>
+                                        <p>
+                                            We have a group of experienced traders and market analysts. After years of professional trading we have joined our skills, knowledge and talents in the effort to bring a new reliable investment opportunity. As the result of careful planning and joint work emerged Forex Investment, a reliable long-term investment project, that offers great returns along with professional approach and security.
                                         </p>
                                     </div>
                                 </div>
@@ -127,7 +129,7 @@
                             <div class="elementor-widget-wrap elementor-element-populated">
                                 <div class="elementor-element elementor-element-80935ab ob-harakiri-inherit elementor-widget elementor-widget-heading" data-id="80935ab" data-element_type="widget" data-settings="{&quot;_ob_harakiri_writing_mode&quot;:&quot;inherit&quot;,&quot;_ob_perspektive_use&quot;:&quot;no&quot;,&quot;_ob_shadough_use&quot;:&quot;no&quot;,&quot;_ob_allow_hoveranimator&quot;:&quot;no&quot;,&quot;_ob_widget_stalker_use&quot;:&quot;no&quot;}" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                        <img width="1600" height="1024" src="{{asset('home/static/temp/wp-content/uploads/sites/56/2021/08/realestate.jpg')}}" class="attachment-full size-full" alt="" loading="lazy" />
+                                        <img width="1600" height="1024" src="{{asset('home/static/temp/wp-content/uploads/sites/56/2021/08/forex.jpg')}}" class="attachment-full size-full" alt="" loading="lazy" />
                                     </div>
                                 </div>
                             </div>
@@ -231,6 +233,7 @@
                 </section>
             </div>
         </div>
+
 
 
 

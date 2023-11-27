@@ -34,7 +34,16 @@ Route::get('estate',[HomeController::class,'estate']);
 Route::get('contact',[HomeController::class,'contact']);
 Route::get('loan',[HomeController::class,'loan']);
 Route::get('privacy',[HomeController::class,'privacy']);
+Route::get('career',[HomeController::class,'career']);
 Route::get('buy-btc',[HomeController::class,'buyBtc']);
 Route::get('register',[Register::class,'landingPage']);
+//Services
+Route::get('realestate',[HomeController::class,'realEstate']);
+Route::get('retirement',[HomeController::class,'retirement']);
+Route::get('stocks',[HomeController::class,'stocks']);
+Route::get('nft',[HomeController::class,'nft']);
+Route::get('forex',[HomeController::class,'forex']);
+Route::get('gold',[HomeController::class,'gold']);
+Route::get('agriculture',[HomeController::class,'agriculture']);
 
 
