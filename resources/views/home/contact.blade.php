@@ -1,56 +1,72 @@
 @extends('home.base')
 @section('content')
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
+    <!--Start breadcrumb area paroller-->
+    <section class="breadcrumb-area">
+        <div class="breadcrumb-area-bg" style="background-image: url({{asset('home/images/breadcrumb/breadcrumb-1.jpg')}});">
         </div>
-        <div class="page-header-bg-2" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
-        </div>
+        <div class="shape-box"></div>
         <div class="container">
-            <div class="page-header__inner">
-                <h2>{{$pageName}}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">{{$pageName}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content">
 
-    <!-- Business One -->
-    <section class="business-one style-five" style="background-image:url(home/images/background/pattern-39.png)">
-        <div class="auto-container">
-            <!-- Business One Lower Section -->
-            <div class="business-one_lower-section text-center" style="margin-top: 10rem;">
-                <h6>Main Details:</h6>
-                <div class="row clearfix">
-                    <!-- Branch Column -->
-                    <div class="branch-column col-lg-4 col-md-6 col-sm-12 mx-auto">
-                        <div class="branch-column_inner">
-                            <div class="branch-name"> (Head Office)</div>
-                            <ul class="branch-info_list">
-                                <li>{!! $web->address !!}
-                                </li>
-                                <li><a href="tel:"></a> </li>
-                                <li><a href="mailto:{{$web->email}}">{{$web->email}}</a></li>
+                        <div class="breadcrumb-menu">
+                            <ul>
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li class="active">{{$pageName}}</li>
                             </ul>
+                        </div>
+                        <div class="title" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                            <h2>{{$pageName}}</h2>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    <!-- End Business One -->
+    <!--End breadcrumb area-->
+    <!--Start Google Map Style2 Area-->
+    <section class="google-map-area">
+        <div class="auto-container">
+            <div class="contact-page-map-outer">
+                <!--Map Canvas-->
+                <div class="map-canvas">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2384.9484203494403!2d-6.4237551!3d53.290459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48677489d3daaaab%3A0x90405a4cfde09bac!2sUnit%20%2370%2C%203015%20Lake%20Dr%2C%20Citywest%2C%20G5%2C%20Co.%20Dublin%2C%20D24%20DKP4%2C%20Ireland!5e0!3m2!1sen!2sus!4v1702519878742!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
 
-    <!-- Map One -->
-    <section class="map-one">
-        <div class="map-outer">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d805184.6331292129!2d144.49266890254142!3d-37.97123689954809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2s!4v1574408946759!5m2!1sen!2s" allowfullscreen=""></iframe>
+                <div class="contact-info-box">
+                    <div class="left-box">
+                        @if(!empty($web->phone))
+                            <h2><a href="tel:{{$web->phone}}">{{$web->phone}}</a></h2>
+                        @endif
+                        <h3><a href="mailto:{{$web->email}}">{{$web->email}}</a></h3>
+                    </div>
+                    <div class="middle-box">
+                        <p>{!! $web->address !!}</p>
+                    </div>
+                    <div class="right-box">
+                        <div class="thm-social-link1">
+                            <ul class="clearfix">
+                                <li>
+                                    <a href="#"><i class="icon-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-facebook-circular-logo"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-pinterest"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="icon-instagram"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
-    <!-- End Map One -->
 
 
 @endsection

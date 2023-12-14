@@ -1,22 +1,30 @@
 @extends('home.base')
 @section('content')
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
+    <!--Start breadcrumb area paroller-->
+    <section class="breadcrumb-area">
+        <div class="breadcrumb-area-bg" style="background-image: url({{asset('home/images/breadcrumb/breadcrumb-1.jpg')}});">
         </div>
-        <div class="page-header-bg-2" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
-        </div>
+        <div class="shape-box"></div>
         <div class="container">
-            <div class="page-header__inner">
-                <h2>{{$pageName}}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">{{$pageName}}</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="inner-content">
+
+                        <div class="breadcrumb-menu">
+                            <ul>
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li class="active">{{$pageName}}</li>
+                            </ul>
+                        </div>
+                        <div class="title" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                            <h2>{{$pageName}}</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!--Page Header End-->
+    <!--End breadcrumb area-->
 
 
     <!--About One Start-->

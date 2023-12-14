@@ -1,46 +1,62 @@
 @extends('home.base')
 @section('content')
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{asset('home/serv/'.$service->photo)}})">
+    <!--Start breadcrumb area paroller-->
+    <section class="breadcrumb-area">
+        <div class="breadcrumb-area-bg" style="background-image: url({{asset('home/images/breadcrumb/breadcrumb-1.jpg')}});">
         </div>
-        <div class="page-header-bg-2" style="background-image: url({{asset('home/serv/'.$service->photo)}})">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>{{$pageName}}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">{{$pageName}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
-
-
-
-    <!--Services Details Start-->
-    <section class="services-details">
+        <div class="shape-box"></div>
         <div class="container">
             <div class="row">
-                <div class="col-xl-12 col-lg-12">
-                    <div class="services-details__right">
-                        <h3 class="services-details__title">{{$service->title}}</h3>
-                        <p class="services-details__text-1">{{$service->short}}</p>
-                        <div class="services-details__img">
-                            <img src="{{asset('home/serv/'.$service->photo)}}" alt="">
+                <div class="col-xl-12">
+                    <div class="inner-content">
+
+                        <div class="breadcrumb-menu">
+                            <ul>
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li class="active">{{$pageName}}</li>
+                            </ul>
                         </div>
-                        <h3 class="services-details__title-2">Digital Brand Strategy</h3>
-                        <p class="services-details__text-3">
-                            {!! str_replace('MYSITE',$siteName,$service->content) !!}
-                        </p>
+                        <div class="title" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                            <h2>{{$pageName}}</h2>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Services Details End-->
+    <!--End breadcrumb area-->
 
+    <!--Start Service Details area -->
+    <section class="service-details-area">
+        <div class="container">
+            <div class="row">
+
+
+                <!--Start Service Details Content -->
+                <div class="col-xl-12 col-lg-12 order-box-1">
+                    <div class="service-details__content">
+                        <div class="img-box-outer">
+                            <div class="img-box1">
+                                <img src="{{asset('home/serv/'.$service->photo)}}" alt="" />
+                            </div>
+                            <div class="icon">
+                                <span class="icon-creative"></span>
+                            </div>
+                        </div>
+
+                        <div class="text-box1">
+                            <h2>{{$service->title}}</h2>
+                            <p>
+                                {!! str_replace('MYSITE',$siteName,$service->content) !!}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--End Service Details Content -->
+
+            </div>
+        </div>
+    </section>
+    <!--End Service Details area -->
 
 @endsection

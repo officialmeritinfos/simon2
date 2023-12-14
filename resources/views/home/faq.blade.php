@@ -1,86 +1,77 @@
 @extends('home.base')
 @section('content')
-    <!--Page Header Start-->
-    <section class="page-header">
-        <div class="page-header-bg" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
+    <!--Start breadcrumb area paroller-->
+    <section class="breadcrumb-area">
+        <div class="breadcrumb-area-bg" style="background-image: url({{asset('home/images/breadcrumb/breadcrumb-1.jpg')}});">
         </div>
-        <div class="page-header-bg-2" style="background-image: url({{asset('home/images/backgrounds/main-slider-2-1.jpg')}})">
-        </div>
-        <div class="container">
-            <div class="page-header__inner">
-                <h2>{{$pageName}}</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{url('/')}}">Home</a></li>
-                    <li><a href="#">{{$pageName}}</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!--Page Header End-->
-
-
-    <!-- END SECTION TEAM -->
-    <section class="promo-section ptb-100" style="margin-top: 3rem;margin-bottom: 5rem;">
+        <div class="shape-box"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading mb-5 text-center">
-                        <h2>Frequently Asked Questions</h2>
+                <div class="col-xl-12">
+                    <div class="inner-content">
+
+                        <div class="breadcrumb-menu">
+                            <ul>
+                                <li><a href="{{url('/')}}">Home</a></li>
+                                <li class="active">{{$pageName}}</li>
+                            </ul>
+                        </div>
+                        <div class="title" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                            <h2>{{$pageName}}</h2>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--pricing faq start-->
+        </div>
+    </section>
+    <!--End breadcrumb area-->
+
+    <!--Start Faq Page One-->
+    <section class="faq-page-one">
+        <div class="container">
             <div class="row">
 
-
-                <div class="col-lg-6">
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-1" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> What is {{$siteName}}?</h6>
-                            </div>
-                            <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
+                <div class="col-xl-6">
+                    <div class="faq-style1-content">
+                        <ul class="accordion-box">
+                            <li class="accordion block active-block">
+                                <div class="acc-btn active">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        What is {{$siteName}}?
+                                    </h3>
+                                </div>
+                                <div class="acc-content current">
                                     <p>{{$siteName}} our company provides a full investment service focused on the bitcoin and cryptocurrency market We are among the best platforms to invest and grow your bitcoin and other cryptocurrency</p>
+
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-2" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I create my account?</h6>
-                            </div>
-                            <div id="collapse-1-2" class="collapse" aria-labelledby="heading-1-2"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        How do I create my account?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
                                     <p>Registration process is very easy and will take a few moments to complete Simply click CREATE ACCOUNT button  and fill in all the required fields</p>
+
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-3" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I make a deposit?</h6>
-                            </div>
-                            <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        How do I make a deposit?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
                                     <p>
                                         To deposit funds in your trading account is quick and simple. For your
                                         convenience you may choose one of the several available deposit methods.
@@ -107,147 +98,101 @@
 
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
+                            </li>
+                        </ul>
                     </div>
-
-                    <div id="accordion-1" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-4" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-1-4" aria-expanded="false" aria-controls="collapse-1-4">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How long does my deposit take before it can reflect on my {{$siteName}} account dashboard?</h6>
-                            </div>
-                            <div id="collapse-1-4" class="collapse" aria-labelledby="heading-1-4"
-                                 data-parent="#accordion-1">
-                                <div class="card-body">
-                                    <p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
                 </div>
 
-                <div class="col-lg-6">
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-5" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-5" aria-expanded="false" aria-controls="collapse-2-5">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How do I make a withdrawal?</h6>
-                            </div>
-                            <div id="collapse-2-5" class="collapse" aria-labelledby="heading-2-5"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>To make a withdrawal request click the WITHDRAW button at the top center of your {{$siteName}} account dashboard and input the required details to withdraw</p>
+                <div class="col-xl-6">
+                    <div class="faq-style1-content faq-style1-content--margintop">
+                        <ul class="accordion-box">
+                            <li class="accordion block active-block">
+                                <div class="acc-btn active">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        How long does my deposit take before it can reflect on my {{$siteName}} account dashboard?
+                                    </h3>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
+                                <div class="acc-content current">
+                                    <p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        How do I make a withdrawal?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
+                                    <p>To make a withdrawal request click the WITHDRAW button at the top center of your {{$siteName}} account dashboard and input the required details to withdraw</p>
 
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-6" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-6" aria-expanded="false" aria-controls="collapse-2-6">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> How long does it take to process my withdrawal?</h6>
-                            </div>
-                            <div id="collapse-2-6" class="collapse" aria-labelledby="heading-2-6"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        How long does it take to process my withdrawal?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
                                     <p>Once we receive your withdrawal request we process immediately and send to your bitcoin wallet</p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-7" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-7" aria-expanded="false" aria-controls="collapse-2-7">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Can I have more than one account?</h6>
-                            </div>
-                            <div id="collapse-2-7" class="collapse" aria-labelledby="heading-2-7"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        Can I have more than one account?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
                                     <p>No you cannot have more than one account only investors on the vip plan are allowed to do so</p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-8" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-8" aria-expanded="false" aria-controls="collapse-2-8">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Is this company properly registered?</h6>
-                            </div>
-                            <div id="collapse-2-8" class="collapse" aria-labelledby="heading-2-8"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>Yes we are officially and properly registered with the united kingdom company house our company registration number is 138898   and registered with the name {{$siteName}} LTD</p>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        Is this company properly registered?
+                                    </h3>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
+                                <div class="acc-content">
+                                    <p>Yes we are officially and properly registered with the united kingdom company house and registered with the name {{$siteName}} LTD</p>
 
-                    </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-9" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-9" aria-expanded="false" aria-controls="collapse-2-9">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> Can I have more than two accounts?</h6>
-                            </div>
-                            <div id="collapse-2-9" class="collapse" aria-labelledby="heading-2-9"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
+                                </div>
+                            </li>
+                            <li class="accordion block">
+                                <div class="acc-btn">
+                                    <div class="icon-outer">
+                                        <i class="flaticon-down-arrow-2"></i>
+                                    </div>
+                                    <h3>
+                                        Can I have more than two accounts?
+                                    </h3>
+                                </div>
+                                <div class="acc-content">
                                     <p>We do not allow multiple accounts except only for our investors on the VIP plan</p>
                                 </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
+                            </li>
+                        </ul>
                     </div>
-
-                    <div id="accordion-2" class="accordion accordion-faq">
-                        <!-- Accordion card 1 -->
-                        <div class="card">
-                            <div class="card-header py-4" id="heading-1-10" data-bs-toggle="collapse" role="button"
-                                 data-bs-target="#collapse-2-10" aria-expanded="false" aria-controls="collapse-2-10">
-                                <h6 class="mb-0"><span class="ti-receipt mr-3"></span> how many times can i make a deposit?</h6>
-                            </div>
-                            <div id="collapse-2-10" class="collapse" aria-labelledby="heading-2-10"
-                                 data-parent="#accordion-2">
-                                <div class="card-body">
-                                    <p>You can make as many deposit as you want on any of our investment plans except the Starter Plan where you can only invest two times. And you can only withdraw once in the Starter plan.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Accordion card 3 -->
-
-                    </div>
-
                 </div>
 
             </div>
-            <!--pricing faq end-->
         </div>
-    </section><!-- END SECTION FAQ -->
+    </section>
+    <!--End Faq Page One-->
 
 @endsection
