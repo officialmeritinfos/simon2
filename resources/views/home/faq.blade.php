@@ -1,198 +1,136 @@
 @extends('home.base')
 @section('content')
-    <!--Start breadcrumb area paroller-->
-    <section class="breadcrumb-area">
-        <div class="breadcrumb-area-bg" style="background-image: url({{asset('home/images/breadcrumb/breadcrumb-1.jpg')}});">
-        </div>
-        <div class="shape-box"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="inner-content">
 
-                        <div class="breadcrumb-menu">
-                            <ul>
-                                <li><a href="{{url('/')}}">Home</a></li>
-                                <li class="active">{{$pageName}}</li>
-                            </ul>
+    <!-- Banner/Slider -->
+    <div id="header" class="banner align-items-center section-bg-dark" style="position:relative;top:85px;min-height:unset;">
+        <div class="container">
+            <div class="circlelarge"></div>
+            <div class="banner-content">
+                <div class="row align-items-center mobile-center mt-5">
+                    <div class="col-lg-6 col-md-12 order-lg-first">
+                        <div class="header-txt">
+                            <h1 class="animated" data-animate="fadeInUp" data-delay="1.2">{{$pageName}}</h1>
                         </div>
-                        <div class="title" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-                            <h2>{{$pageName}}</h2>
-                        </div>
+                    </div><!-- .col  -->
+                </div><!-- .row  -->
+            </div><!-- .banner-content  -->
+        </div><!-- .container  -->
+    </div>
+    <!-- End Banner/Slider -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Section -->
+    <div class="section section-pad section-bg-dark blog-section mt-5 pb-0" id="blogs">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div>
+    <!-- Start Section -->
+
+
+    <!-- Start Section -->
+    <div class="section section-pad no-pb section-bg-alt">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8 col-lg-6 offset-md-2">
+                    <div class="section-head">
+                        <h2 class="section-title animated" data-animate="fadeInUp" data-delay="0">FAQ
+                            <span>FAQS</span>
+                        </h2>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--End breadcrumb area-->
-
-    <!--Start Faq Page One-->
-    <section class="faq-page-one">
-        <div class="container">
             <div class="row">
-
-                <div class="col-xl-6">
-                    <div class="faq-style1-content">
-                        <ul class="accordion-box">
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
+                <div class="col-md-8 offset-md-2">
+                    <div class="tab-custom">
+                        <div class="tab-content animated" data-animate="fadeInUp" data-delay=".1">
+                            <div class="tab-pane fade show active" id="tab-1">
+                                <div class="accordion" id="accordion-1">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-1">
+                                                    What is Bitcoin?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-1" class="collapse" data-parent="#accordion-1">
+                                            <div class="card-body">
+                                                <p>Bitcoin is the first decentralised, open source cryptocurrency that runs on a global peer to peer network, without the need for middlemen and a centralised issuer.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3>
-                                        What is {{$siteName}}?
-                                    </h3>
-                                </div>
-                                <div class="acc-content current">
-                                    <p>{{$siteName}} our company provides a full investment service focused on the bitcoin and cryptocurrency market We are among the best platforms to invest and grow your bitcoin and other cryptocurrency</p>
-
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-2">
+                                                    Why use cryptocurrency?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-2" class="collapse" data-parent="#accordion-1">
+                                            <div class="card-body">
+                                                <p>A cryptocurrency is a medium of exchange such as the USD, but is designed for the purpose of exchanging digital information. The benefit is that cryptocurrencies cannot be counterfeited.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3>
-                                        How do I create my account?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>Registration process is very easy and will take a few moments to complete Simply click CREATE ACCOUNT button  and fill in all the required fields</p>
-
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-3">
+                                                    How can i join the invest?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-3" class="collapse" data-parent="#accordion-1">
+                                            <div class="card-body">
+                                                <p>Our trade investment platform requires that user must have credited their online wallet account before participating in the trade-investment.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3>
-                                        How do I make a deposit?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>
-                                        To deposit funds in your trading account is quick and simple. For your
-                                        convenience you may choose one of the several available deposit methods.
-                                        To make a successful deposit please follow the steps below:<br>
-                                        <ul>
-                                            <li>Login to your account Click on the New Investment button in the
-                                                DASHBOARD section.<br>
-                                            </li>
-
-                                            <li>Choose the deposit option And fill the form including the amount and
-                                                the package.
-                                            </li>
-                                            <li>
-                                                You will receive the wallet address to make payment to on the next page.
-                                                After payment, contact support.
-                                            </li>
-                                            <li>
-                                                Once your deposit has been confirmed, the status of the investment will change
-                                                to <span class="text-primary">Ongoing</span> which means that it has been confirmed
-                                                and your investment started.
-                                            </li>
-                                        </ul>
-
-
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-xl-6">
-                    <div class="faq-style1-content faq-style1-content--margintop">
-                        <ul class="accordion-box">
-                            <li class="accordion block active-block">
-                                <div class="acc-btn active">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-4">
+                                                    What is the minimum or maximum amount for trade-invest?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-4" class="collapse" data-parent="#accordion-1">
+                                            <div class="card-body">
+                                                <p>The minimum and maximum amount for trade-investment varies depending on our system's current assets.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3>
-                                        How long does my deposit take before it can reflect on my {{$siteName}} account dashboard?
-                                    </h3>
-                                </div>
-                                <div class="acc-content current">
-                                    <p>Your deposit will be reflected immediately once it is confirmed on the blockchain network</p>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" data-target="#collapse-1-5">
+                                                    Who can participate in the trade-investment?<span class="plus-minus"><span class="ti ti-angle-up"></span></span>
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-5" class="collapse" data-parent="#accordion-1">
+                                            <div class="card-body">
+                                                <p>All users, from novice to experts. You need not have knowledge of trading to participate in our trade-investment program.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h3>
-                                        How do I make a withdrawal?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>To make a withdrawal request click the WITHDRAW button at the top center of your {{$siteName}} account dashboard and input the required details to withdraw</p>
 
                                 </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>
-                                        How long does it take to process my withdrawal?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>Once we receive your withdrawal request we process immediately and send to your bitcoin wallet</p>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>
-                                        Can I have more than one account?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>No you cannot have more than one account only investors on the vip plan are allowed to do so</p>
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>
-                                        Is this company properly registered?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>Yes we are officially and properly registered with the united kingdom company house and registered with the name {{$siteName}} LTD</p>
+                            </div>
+                        </div><!-- End tab-content -->
+                    </div><!-- End tab-custom -->
+                </div><!-- End col -->
+            </div><!-- End row -->
+        </div><!-- End container -->
+    </div>
+    <!-- End Section -->
 
-                                </div>
-                            </li>
-                            <li class="accordion block">
-                                <div class="acc-btn">
-                                    <div class="icon-outer">
-                                        <i class="flaticon-down-arrow-2"></i>
-                                    </div>
-                                    <h3>
-                                        Can I have more than two accounts?
-                                    </h3>
-                                </div>
-                                <div class="acc-content">
-                                    <p>We do not allow multiple accounts except only for our investors on the VIP plan</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--End Faq Page One-->
 
 @endsection
