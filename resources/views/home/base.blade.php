@@ -107,7 +107,7 @@
                     <div class="header-left">
                         <div class="main-logo-box">
                             <a href="{{url('/')}}">
-                                <img src="{{asset('home/images/'.$web->logo)}}" alt="Awesome Logo" title="">
+                                <img src="{{asset('home/images/'.$web->logo)}}" alt="Awesome Logo" title="" style="width: 150px;">
                             </a>
                         </div>
 
@@ -195,7 +195,7 @@
                     <!--Logo-->
                     <div class="logo float-left">
                         <a href="{{url('/')}}" class="img-responsive">
-                            <img src="{{asset('home/images/'.$web->logo)}}" alt="" title="">
+                            <img src="{{asset('home/images/'.$web->logo)}}" alt="" title="" style="width: 100px;">
                         </a>
                     </div>
                     <!--Right Col-->
@@ -341,7 +341,7 @@
                     <div class="bottom-inner">
                         <div class="footer-logo-style1">
                             <a href="{{url('/')}}">
-                                <img src="{{asset('home/images/'.$web->logo)}}" alt="Awesome Logo" title="">
+                                <img src="{{asset('home/images/'.$web->logo)}}" alt="Awesome Logo" title="" style="width: 150px;">
                             </a>
                         </div>
                         <div class="copyright">
@@ -361,33 +361,7 @@
         <span class="flaticon-up-arrow"></span>
     </button>
 
-    <!-- search-popup -->
-    <div id="search-popup" class="search-popup">
-        <div class="close-search"><i class="icon-close"></i></div>
-        <div class="popup-inner">
-            <div class="overlay-layer"></div>
-            <div class="search-form">
-                <form method="post" action="https://mehedi.asiandevelopers.com/sultin/index">
-                    <div class="form-group">
-                        <fieldset>
-                            <input type="search" class="form-control" name="search-input" value=""
-                                   placeholder="Search Here" required>
-                            <input type="submit" value="Search Now!" class="theme-btn style-four">
-                        </fieldset>
-                    </div>
-                </form>
-                <h3>Recent Search Keywords</h3>
-                <ul class="recent-searches">
-                    <li><a href="index">waste</a></li>
-                    <li><a href="index">Dumpster</a></li>
-                    <li><a href="index">Zerowaste</a></li>
-                    <li><a href="index">Garbage</a></li>
-                    <li><a href="index">trash</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!-- search-popup end -->
+
 </div>
 
 
