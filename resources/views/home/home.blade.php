@@ -106,7 +106,6 @@
                                             @else
                                                 Unlimited
                                             @endif MAXIMUM</li>
-                                        <li>Minimum Withdrawal : ${{$package->minWithdrawal}}</li>
                                         <li>Referral bonus : {{$package->referral}}%</li>
                                     </ul>
                                     <a href="{{route('register')}}" class="invest_now">INVEST NOW</a>

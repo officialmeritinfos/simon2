@@ -18,6 +18,11 @@
                         @csrf
                         @include('templates.notification')
                         <div class="form-group col-md-12">
+                            <label for="inputAddress2">Minimum Amount Withdrawal ($)</label>
+                            <input type="number" class="form-control" id="inputAddress2"
+                                   placeholder="Enter Amount to Withdraw" name="min" value="{{$web->minWithdrawal}}" disabled>
+                        </div>
+                        <div class="form-group col-md-12">
                             <label for="inputAddress2">Amount ($)</label>
                             <input type="number" class="form-control" id="inputAddress2"
                                    placeholder="Enter Amount to Withdraw" name="amount">

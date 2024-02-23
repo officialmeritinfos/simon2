@@ -94,6 +94,9 @@ class Withdrawals extends Controller
         if ($balance < $input['amount']){
             return back()->with('error','Insufficient balance in selected account.');
         }
+        if ($web->minWithdrawal > $input['amount']){
+            return back()->with('error','You cannot withdraw below the minimum withdrawal');
+        }
         $ref = $this->generateId('withdrawals','reference',10);
         $data=[
             'user'=>$user->id,'reference'=>$ref,'amount'=>$input['amount'],'asset'=>$input['asset'],
